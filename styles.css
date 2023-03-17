@@ -66,6 +66,48 @@
   border-radius: 6px;
 }
 
+.jobcard-0-2-559 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: pointer;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+}
+.gridContainer-0-2-571 {
+  padding: 0;
+}
+
+.conFluid-0-2-60 {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.cardContent-0-2-558 {
+  margin: 0;
+  z-index: 1;
+  position: relative;
+  pointer-events: none;
+}
+
+.row-0-2-173 {
+  box-sizing: border-box;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.ribbonCol-0-2-577 {
+  margin-bottom: 8px;
+}
+
+.formatCol-0-2-572 {
+  padding: 0;
+}
+
 @media screen and (min-width: 768px) {
   .card-0-2-518 {
     padding: 32px;
