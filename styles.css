@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+.row-0-2-173 {
+  box-sizing: border-box;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.row-0-2-173:before,
+.row-0-2-173:after {
+  content: "";
+  display: table;
+}
+
+.jobCardContainer-0-2-534 {
+  height: min-content;
+  padding-right: 12px;
+}
+
+.col-0-2-174 {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 1px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.jbetween-0-2-16 {
+  justify-content: space-between;
+}
+
+.flex-0-2-4 {
+  display: flex;
+}
+
+.leftSide-0-2-541 {
+  flex: 1;
+}
+
+.rightSide-0-2-542 {
+  float: right;
+}
+
+.card-0-2-554 {
+  padding: 24px 32px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.flat-0-2-520 {
+  z-index: auto;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+    0 1px 6px 0 rgba(0, 29, 124, 0.05);
+}
+
+.card-0-2-518 {
+  padding: 16px;
+  position: relative;
+  background: #ffffff;
+  transition: 0.3s box-shadow, 0.3s transform;
+  border-radius: 6px;
+}
+
+.jobcard-0-2-559 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  cursor: pointer;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+}
+.gridContainer-0-2-571 {
+  padding: 0;
+}
+
+.conFluid-0-2-60 {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.cardContent-0-2-558 {
+  margin: 0;
+  z-index: 1;
+  position: relative;
+  pointer-events: none;
+}
+
+.row-0-2-173 {
+  box-sizing: border-box;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.ribbonCol-0-2-577 {
+  margin-bottom: 8px;
+}
+
+.formatCol-0-2-572 {
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .card-0-2-518 {
+    padding: 32px;
+  }
+}
+
+div {
+  display: block;
+}
