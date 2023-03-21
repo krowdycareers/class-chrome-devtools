@@ -21,4 +21,4 @@ const filterByCountries = (countries) => {
   });
 };
 
-console.log(filterByCountries(["COLOMBIA", "PERU", "MEXICO", "CHILE"]));
+console.log(filterByCountries(["PERU", "MEXICO", "CHILE"]));
