@@ -5,6 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script>
+      const similarJobs = Array.from(document.querySelectorAll(".similarJob-0-2-766")).map((element)=> {
+        return {
+          title: element.querySelector("a").innerText,
+          url: element.querySelector("a").href,
+          description: querySelector("p").innerText
+        }
+      }).filter(el => el.title.includes("Peru") && el.description.includes("$9,000 - $11,000"));
+      console.log("El resultado es: ", similarJobs);
+    </script>
     <style data-jss="" data-meta="Unthemed">
         body,html {
             padding: 0;
