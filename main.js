@@ -35,5 +35,10 @@ const rangoSalarial = similarJobs.map(elemento => {
     salario: elemento.querySelector('.small-0-2-90').innerText
   }
 })
+
+const salariosUnicos = rangoSalarial.filter((valor, indice, arreglo) => {
+  return arreglo.findIndex(item => item.salario === valor.salario) ===indice;
+})
 console.log("🚀 ~ file: main.js:40 ~ rangoSalarial ~ rangoSalarial:", rangoSalarial)
+console.log("🚀 ~ file: main.js:42 ~ salariosUnicos ~ salariosUnicos:", salariosUnicos)
 
