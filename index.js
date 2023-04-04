@@ -1,24 +1,40 @@
-const similarJobs = Array.from(
-  document.querySelectorAll(".similarJob-0-2-766")
-);
-
-const jobs = similarJobs.map((el) => {
+const jobs = document.querySelectorAll('[class*="similarJob-"]');
+const countries = ["COLOMBIA", "PERU", "MEXICO", "CHILE"];
+const arrayJobs = [...jobs];
+const jobsWithTitleAndSalary = arrayJobs.map((job) => {
+  const [{ innerText: title, href: url }, { innerText: rangeSalary }] =
+    job.children;
   return {
-    title: el.querySelector("a").innerText,
-    url: el.querySelector("a").href,
-    salaryRange: el.querySelector(".bottomSmall-0-2-118").innerText,
+    title,
+    url,
+    rangeSalary,
   };
 });
 
-const filterByCountries = (countries) => {
-  return countries.map((country) => {
-    const filterJobs = jobs.filter((job) => job.title.includes(country));
+const countryAndSalaryGroupingJob = countries.map((country) => {
+  const jobsFilterByCountry = jobsWithTitleAndSalary.filter((job) =>
+    job.title.toLowerCase().includes(country.toLowerCase())
+  );
+  const rangeSalarys = jobsFilterByCountry.reduce((ranges, job) => {
+    if (!ranges.some((el) => el == job.rangeSalary))
+      ranges.push(job.rangeSalary);
+    return ranges;
+  }, []);
+
+  const rangeSalaryGrouping = rangeSalarys.map((rangeSalary) => {
+    jobsFilteredByRangeSalary = jobsFilterByCountry.filter(
+      (job) => job.rangeSalary == rangeSalary
+    );
     return {
-      country,
-      quantity: filterJobs.length,
-      jobs: filterJobs,
+      rangeSalary,
+      jobsFilteredByRangeSalary,
     };
   });
-};
+  return {
+    country,
+    count: jobsFilterByCountry.length,
+    rangeSalaryGrouping,
+  };
+});
 
-console.log(filterByCountries(["COLOMBIA", "PERU", "MEXICO", "CHILE"]));
+console.log(countryAndSalaryGroupingJob);
