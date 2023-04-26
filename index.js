@@ -3,7 +3,7 @@ const publicaciones = { mexico: [], peru: [], colombia: [], chile: [] };
 
 const jobs = NODOS.map((nodo) => ({
   titulo: nodo.querySelector('a > p').innerText,
-  salario: nodo.querySelector('a').innerText,
+  salario: nodo.querySelector('p[id*="salario"]').innerText,
 }));
 
 jobs.forEach((job) => {
