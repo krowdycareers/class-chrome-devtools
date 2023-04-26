@@ -5,7 +5,7 @@ document.getElementById("alert_button").addEventListener("click", () => {
     title: d.querySelector("a").title,
     salary: d.querySelector("[id*=vacante_similar_salario]").innerText,
   }));
-  let contries = ["PERU", "COLOMBIA", "MEXICO"];
+  let contries = ["PERU", "COLOMBIA", "MEXICO","CHILE"];
 
   contries.forEach((el) => {
     let jobs = [];
