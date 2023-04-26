@@ -1,2396 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style data-jss="" data-meta="Unthemed">
-        body,html {
-            padding: 0;
-            margin: 0;
-            background-color: #fff
-        }
-        
-        * {
-            box-sizing: border-box;
-            font-family: HK Grotesk
-        }
-        
-        @font-face {
-            font-family: HK Grotesk;
-            src: url(https://cdn-h4.occ.com.mx/fonts/hkgrotesk-regular.woff2) format("woff2"),url(https://cdn-h4.occ.com.mx/fonts/hkgrotesk-regular.woff) format("woff");
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-            font-variant-ligatures:no-common-ligatures;unicode-range: U+00??,U+0131,U+0152-0153,U+02bb-02bc,U+02c6,U+02da,U+02dc,U+2000-206f,U+2074,U+20ac,U+2122,U+2191,U+2193,U+2212,U+2215,U+feff,U+fffd
-        }
-        
-        @font-face {
-            font-family: HK Grotesk;
-            src: url(https://cdn-h4.occ.com.mx/fonts/hkgrotesk-semibold.woff2) format("woff2"),url(https://cdn-h4.occ.com.mx/fonts/hkgrotesk-semibold.woff) format("woff");
-            font-weight: 600;
-            font-style: normal;
-            font-display: swap;
-            font-variant-ligatures:no-common-ligatures;unicode-range: U+00??,U+0131,U+0152-0153,U+02bb-02bc,U+02c6,U+02da,U+02dc,U+2000-206f,U+2074,U+20ac,U+2122,U+2191,U+2193,U+2212,U+2215,U+feff,U+fffd
-        }
-        
-        .flex-0-2-4 {
-          display: flex;
-        }
-        .iFlex-0-2-5 {
-          display: inline-flex;
-        }
-        .row-0-2-6 {
-          flex-direction: row;
-        }
-        .rowR-0-2-7 {
-          flex-direction: row-reverse;
-        }
-        .col-0-2-8 {
-          flex-direction: column;
-        }
-        .colR-0-2-9 {
-          flex-direction: column-reverse;
-        }
-        .noWrap-0-2-10 {
-          flex-wrap: nowrap;
-        }
-        .wrap-0-2-11 {
-          flex-wrap: wrap;
-        }
-        .wrapR-0-2-12 {
-          flex-wrap: wrap-reverse;
-        }
-        .jstart-0-2-13 {
-          justify-content: flex-start;
-        }
-        .jend-0-2-14 {
-          justify-content: flex-end;
-        }
-        .jcenter-0-2-15 {
-          justify-content: center;
-        }
-        .jbetween-0-2-16 {
-          justify-content: space-between;
-        }
-        .jaround-0-2-17 {
-          justify-content: space-around;
-        }
-        .jevenly-0-2-18 {
-          justify-content: space-evenly;
-        }
-        .astart-0-2-19 {
-          align-items: flex-start;
-        }
-        .aend-0-2-20 {
-          align-items: flex-end;
-        }
-        .acenter-0-2-21 {
-          align-items: center;
-        }
-        .abase-0-2-22 {
-          align-items: baseline;
-        }
-        .astretch-0-2-23 {
-          align-items: stretch;
-        }
-        .cstart-0-2-24 {
-          align-content: flex-start;
-        }
-        .cend-0-2-25 {
-          align-content: flex-end;
-        }
-        .ccenter-0-2-26 {
-          align-content: center;
-        }
-        .cbetween-0-2-27 {
-          align-content: space-between;
-        }
-        .caround-0-2-28 {
-          align-content: space-around;
-        }
-        .cstretch-0-2-29 {
-          align-content: stretch;
-        }
-        .sauto-0-2-30 {
-          align-self: auto;
-        }
-        .sstart-0-2-31 {
-          align-self: flex-start;
-        }
-        .send-0-2-32 {
-          align-self: flex-end;
-        }
-        .scenter-0-2-33 {
-          align-self: center;
-        }
-        .sbase-0-2-34 {
-          align-self: baseline;
-        }
-        .sstretch-0-2-35 {
-          align-self: stretch;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .icon-0-2-74 {
-          border: 0;
-          display: inline-block;
-          outline: 0;
-          box-sizing: border-box;
-        }
-        .click-0-2-75 {
-          cursor: pointer;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .text-0-2-82 {
-          margin: 0;
-          font-style: normal;
-          font-family: 'HK Grotesk', sans-serif;
-          font-weight: 400;
-          letter-spacing: 0;
-        }
-        .hero-0-2-83 {
-          font-size: 28px;
-          font-weight: 600;
-          line-height: 32px;
-        }
-        @media screen and (min-width:768px) {
-          .hero-0-2-83 {
-            font-size: 57px;
-            line-height: 72px;
-            letter-spacing: -2px;
-          }
-        }
-        .headline-0-2-84 {
-          font-size: 28px;
-          font-weight: 600;
-          line-height: 32px;
-        }
-        @media screen and (min-width:768px) {
-          .headline-0-2-84 {
-            font-size: 36px;
-            line-height: 48px;
-            letter-spacing: -0.5px;
-          }
-        }
-        .heading-0-2-85 {
-          font-size: 22px;
-          font-weight: 600;
-          line-height: 32px;
-        }
-        .subheading-0-2-86 {
-          font-size: 17px;
-          font-weight: 600;
-          line-height: 24px;
-        }
-        .extraLarge-0-2-87 {
-          font-size: 22px;
-          line-height: 32px;
-        }
-        .large-0-2-88 {
-          font-size: 17px;
-          line-height: 24px;
-        }
-        .standard-0-2-89 {
-          font-size: 15px;
-          line-height: 24px;
-        }
-        .small-0-2-90 {
-          font-size: 13px;
-          line-height: 16px;
-        }
-        .micro-0-2-91 {
-          font-size: 11px;
-          line-height: 16px;
-        }
-        .strong-0-2-92 {
-          font-weight: 600;
-        }
-        .primary-0-2-93 {
-          color: #083cae;
-        }
-        .secondary-0-2-94 {
-          color: #f13465;
-        }
-        .success-0-2-95 {
-          color: #009537;
-        }
-        .error-0-2-96 {
-          color: #db3737;
-        }
-        .warning-0-2-97 {
-          color: #e69000;
-        }
-        .info-0-2-98 {
-          color: #5736ab;
-        }
-        .disabled-0-2-99 {
-          color: #dddddd;
-        }
-        .white-0-2-100 {
-          color: #ffffff;
-        }
-        .link-0-2-101 {
-          color: #0946CB;
-        }
-        .current-0-2-102 {
-          color: currentcolor;
-        }
-        .highEmphasis-0-2-103 {
-          color: #222222;
-        }
-        .midEmphasis-0-2-104 {
-          color: #777777;
-        }
-        .lowEmphasis-0-2-105 {
-          color: #aaaaaa;
-        }
-        .left-0-2-106 {
-          text-align: left;
-        }
-        .center-0-2-107 {
-          text-align: center;
-        }
-        .right-0-2-108 {
-          text-align: right;
-        }
-        .topXTiny-0-2-109 {
-          margin-top: 4px;
-        }
-        .topTiny-0-2-110 {
-          margin-top: 8px;
-        }
-        .topSmall-0-2-111 {
-          margin-top: 16px;
-        }
-        .topBase-0-2-112 {
-          margin-top: 24px;
-        }
-        .topMedium-0-2-113 {
-          margin-top: 32px;
-        }
-        .topLarge-0-2-114 {
-          margin-top: 48px;
-        }
-        .topXLarge-0-2-115 {
-          margin-top: 64px;
-        }
-        .bottomXTiny-0-2-116 {
-          margin-bottom: 4px;
-        }
-        .bottomTiny-0-2-117 {
-          margin-bottom: 8px;
-        }
-        .bottomSmall-0-2-118 {
-          margin-bottom: 16px;
-        }
-        .bottomBase-0-2-119 {
-          margin-bottom: 24px;
-        }
-        .bottomMedium-0-2-120 {
-          margin-bottom: 32px;
-        }
-        .bottomLarge-0-2-121 {
-          margin-bottom: 48px;
-        }
-        .bottomXLarge-0-2-122 {
-          margin-bottom: 64px;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .btn-0-2-123 {
-          cursor: pointer;
-          height: 32px;
-          display: inline-block;
-          padding: 0 16px;
-          position: relative;
-          font-size: 13px;
-          max-width: 100%;
-          box-sizing: border-box;
-          text-align: center;
-          transition: 0.3s all;
-          font-family: 'HK Grotesk', sans-serif;
-          font-weight: 600;
-          line-height: 24px;
-          user-select: none;
-          white-space: nowrap;
-          touch-action: manipulation;
-          border-radius: 6px;
-          margin-bottom: 0;
-          letter-spacing: 1px;
-          text-transform: uppercase;
-          text-decoration: none;
-        }
-        .btn-0-2-123:focus {
-          outline: none;
-        }
-        .btn-0-2-123:hover {
-          text-decoration: none;
-        }
-        .cont-0-2-124 {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          pointer-events: none;
-          justify-content: center;
-        }
-        .loadCont-0-2-125 {
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          position: absolute;
-          align-items: center;
-          pointer-events: none;
-          justify-content: center;
-        }
-        .primary-0-2-126 {
-          color: #ffffff;
-          border: 1px solid #f13465;
-          background: #f13465;
-        }
-        .primary-0-2-126:hover, .primary-0-2-126:active {
-          color: #ffffff;
-          background: #cc1b4a;
-          border-color: #cc1b4a;
-        }
-        .primary-0-2-126 .loadIcon-0-2-143 {
-          background: url(data:image/svg+xml;base64,CiAgPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgogICAgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogICAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgICAgLnN0MHtmaWxsOnVybCgjU1ZHSURfMV8pO30KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzFfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjIxIiB5MT0iMTIiIHgyPSIzIiB5Mj0iMTIiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMTc3OCIgc3R5bGU9InN0b3AtY29sb3I6I2ZmZmZmZjtzdG9wLW9wYWNpdHk6MCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMjI3MSIgc3R5bGU9InN0b3AtY29sb3I6I2ZmZmZmZjtzdG9wLW9wYWNpdHk6MC4xIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4zMTU3IiBzdHlsZT0ic3RvcC1jb2xvcjojZmZmZmZmO3N0b3Atb3BhY2l0eTowLjQiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjQ1MjUiIHN0eWxlPSJzdG9wLWNvbG9yOiNmZmZmZmY7c3RvcC1vcGFjaXR5OjAuNyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNTU0NiIgc3R5bGU9InN0b3AtY29sb3I6I2ZmZmZmZiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuOTI3OCIgc3R5bGU9InN0b3AtY29sb3I6I2ZmZmZmZiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xOS4xLDEyYzAuMSw0LTMuMSw3LjItNy4xLDcuMlM0LjgsMTYsNC44LDEyUzgsNC44LDEyLDQuOFYzYy01LDAtOSw0LTksOXM0LDksOSw5czktNCw5LTlIMTkuMXoiLz4KICA8L3N2Zz4=);
-        }
-        .secondary-0-2-127 {
-          color: #0946CB;
-          border: 1px solid #e4edff;
-          background: #e4edff;
-        }
-        .secondary-0-2-127:hover, .secondary-0-2-127:active {
-          color: #0946CB;
-          background: #c8d9ff;
-        }
-        .secondary-0-2-127.disabled-0-2-134 {
-          color: #0946CB !important;
-          border: 1px solid #e4edff !important;
-          background: #e4edff !important;
-        }
-        .secondary-0-2-127 .loadIcon-0-2-143 {
-          background: url(data:image/svg+xml;base64,CiAgPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgogICAgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogICAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgICAgLnN0MHtmaWxsOnVybCgjU1ZHSURfMV8pO30KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzFfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjIxIiB5MT0iMTIiIHgyPSIzIiB5Mj0iMTIiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMTc3OCIgc3R5bGU9InN0b3AtY29sb3I6IzA5NDZDQjtzdG9wLW9wYWNpdHk6MCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMjI3MSIgc3R5bGU9InN0b3AtY29sb3I6IzA5NDZDQjtzdG9wLW9wYWNpdHk6MC4xIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4zMTU3IiBzdHlsZT0ic3RvcC1jb2xvcjojMDk0NkNCO3N0b3Atb3BhY2l0eTowLjQiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjQ1MjUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwOTQ2Q0I7c3RvcC1vcGFjaXR5OjAuNyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNTU0NiIgc3R5bGU9InN0b3AtY29sb3I6IzA5NDZDQiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuOTI3OCIgc3R5bGU9InN0b3AtY29sb3I6IzA5NDZDQiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xOS4xLDEyYzAuMSw0LTMuMSw3LjItNy4xLDcuMlM0LjgsMTYsNC44LDEyUzgsNC44LDEyLDQuOFYzYy01LDAtOSw0LTksOXM0LDksOSw5czktNCw5LTlIMTkuMXoiLz4KICA8L3N2Zz4=);
-        }
-        .tertiary-0-2-128 {
-          color: #222222;
-          border: 1px solid #dddddd;
-          background: #ffffff;
-        }
-        .tertiary-0-2-128:hover, .tertiary-0-2-128:active {
-          color: #777777;
-        }
-        .tertiary-0-2-128.disabled-0-2-134 {
-          color: #222222 !important;
-          border: 1px solid #dddddd !important;
-          background: #ffffff !important;
-        }
-        .tertiary-0-2-128 .loadIcon-0-2-143 {
-          background: url(data:image/svg+xml;base64,CiAgPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgogICAgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogICAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgICAgLnN0MHtmaWxsOnVybCgjU1ZHSURfMV8pO30KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzFfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjIxIiB5MT0iMTIiIHgyPSIzIiB5Mj0iMTIiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMTc3OCIgc3R5bGU9InN0b3AtY29sb3I6Izc3Nzc3NztzdG9wLW9wYWNpdHk6MCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMjI3MSIgc3R5bGU9InN0b3AtY29sb3I6Izc3Nzc3NztzdG9wLW9wYWNpdHk6MC4xIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4zMTU3IiBzdHlsZT0ic3RvcC1jb2xvcjojNzc3Nzc3O3N0b3Atb3BhY2l0eTowLjQiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjQ1MjUiIHN0eWxlPSJzdG9wLWNvbG9yOiM3Nzc3Nzc7c3RvcC1vcGFjaXR5OjAuNyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNTU0NiIgc3R5bGU9InN0b3AtY29sb3I6Izc3Nzc3NyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuOTI3OCIgc3R5bGU9InN0b3AtY29sb3I6Izc3Nzc3NyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xOS4xLDEyYzAuMSw0LTMuMSw3LjItNy4xLDcuMlM0LjgsMTYsNC44LDEyUzgsNC44LDEyLDQuOFYzYy01LDAtOSw0LTksOXM0LDksOSw5czktNCw5LTlIMTkuMXoiLz4KICA8L3N2Zz4=);
-        }
-        .tertiaryWhite-0-2-129 {
-          color: #ffffff;
-          border: 1px solid #dddddd;
-          background: transparent;
-        }
-        .tertiaryWhite-0-2-129:hover, .tertiaryWhite-0-2-129:active {
-          opacity: 0.6;
-        }
-        .tertiaryWhite-0-2-129.disabled-0-2-134 {
-          color: #ffffff !important;
-          border: 1px solid #dddddd !important;
-          background: transparent !important;
-        }
-        .tertiaryWhite-0-2-129 .loadIcon-0-2-143 {
-          background: url(data:image/svg+xml;base64,CiAgPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgogICAgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogICAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgICAgLnN0MHtmaWxsOnVybCgjU1ZHSURfMV8pO30KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzFfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjIxIiB5MT0iMTIiIHgyPSIzIiB5Mj0iMTIiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMTc3OCIgc3R5bGU9InN0b3AtY29sb3I6I2ZmZmZmZjtzdG9wLW9wYWNpdHk6MCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMjI3MSIgc3R5bGU9InN0b3AtY29sb3I6I2ZmZmZmZjtzdG9wLW9wYWNpdHk6MC4xIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4zMTU3IiBzdHlsZT0ic3RvcC1jb2xvcjojZmZmZmZmO3N0b3Atb3BhY2l0eTowLjQiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjQ1MjUiIHN0eWxlPSJzdG9wLWNvbG9yOiNmZmZmZmY7c3RvcC1vcGFjaXR5OjAuNyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNTU0NiIgc3R5bGU9InN0b3AtY29sb3I6I2ZmZmZmZiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuOTI3OCIgc3R5bGU9InN0b3AtY29sb3I6I2ZmZmZmZiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xOS4xLDEyYzAuMSw0LTMuMSw3LjItNy4xLDcuMlM0LjgsMTYsNC44LDEyUzgsNC44LDEyLDQuOFYzYy01LDAtOSw0LTksOXM0LDksOSw5czktNCw5LTlIMTkuMXoiLz4KICA8L3N2Zz4=);
-        }
-        .ghostPink-0-2-130 {
-          color: #f13465;
-          border: none;
-          background: transparent;
-          padding-left: 0;
-          padding-right: 0;
-        }
-        .ghostPink-0-2-130:hover, .ghostPink-0-2-130:active {
-          color: #cc1b4a;
-        }
-        .ghostPink-0-2-130.disabled-0-2-134 {
-          color: #f13465 !important;
-          border: none !important;
-          background: transparent !important;
-        }
-        .ghostPink-0-2-130 .loadIcon-0-2-143 {
-          background: url(data:image/svg+xml;base64,CiAgPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgogICAgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogICAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgICAgLnN0MHtmaWxsOnVybCgjU1ZHSURfMV8pO30KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzFfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjIxIiB5MT0iMTIiIHgyPSIzIiB5Mj0iMTIiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMTc3OCIgc3R5bGU9InN0b3AtY29sb3I6I2YxMzQ2NTtzdG9wLW9wYWNpdHk6MCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMjI3MSIgc3R5bGU9InN0b3AtY29sb3I6I2YxMzQ2NTtzdG9wLW9wYWNpdHk6MC4xIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4zMTU3IiBzdHlsZT0ic3RvcC1jb2xvcjojZjEzNDY1O3N0b3Atb3BhY2l0eTowLjQiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjQ1MjUiIHN0eWxlPSJzdG9wLWNvbG9yOiNmMTM0NjU7c3RvcC1vcGFjaXR5OjAuNyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNTU0NiIgc3R5bGU9InN0b3AtY29sb3I6I2YxMzQ2NSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuOTI3OCIgc3R5bGU9InN0b3AtY29sb3I6I2YxMzQ2NSIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xOS4xLDEyYzAuMSw0LTMuMSw3LjItNy4xLDcuMlM0LjgsMTYsNC44LDEyUzgsNC44LDEyLDQuOFYzYy01LDAtOSw0LTksOXM0LDksOSw5czktNCw5LTlIMTkuMXoiLz4KICA8L3N2Zz4=);
-        }
-        .ghostGrey-0-2-131 {
-          color: #222222;
-          border: none;
-          background: transparent;
-          padding-left: 0;
-          padding-right: 0;
-        }
-        .ghostGrey-0-2-131:hover, .ghostGrey-0-2-131:active {
-          color: #777777;
-        }
-        .ghostGrey-0-2-131.disabled-0-2-134 {
-          color: #222222 !important;
-          border: none !important;
-          background: transparent !important;
-        }
-        .ghostGrey-0-2-131 .loadIcon-0-2-143 {
-          background: url(data:image/svg+xml;base64,CiAgPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgogICAgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogICAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgICAgLnN0MHtmaWxsOnVybCgjU1ZHSURfMV8pO30KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzFfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjIxIiB5MT0iMTIiIHgyPSIzIiB5Mj0iMTIiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMTc3OCIgc3R5bGU9InN0b3AtY29sb3I6Izc3Nzc3NztzdG9wLW9wYWNpdHk6MCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMjI3MSIgc3R5bGU9InN0b3AtY29sb3I6Izc3Nzc3NztzdG9wLW9wYWNpdHk6MC4xIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4zMTU3IiBzdHlsZT0ic3RvcC1jb2xvcjojNzc3Nzc3O3N0b3Atb3BhY2l0eTowLjQiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjQ1MjUiIHN0eWxlPSJzdG9wLWNvbG9yOiM3Nzc3Nzc7c3RvcC1vcGFjaXR5OjAuNyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNTU0NiIgc3R5bGU9InN0b3AtY29sb3I6Izc3Nzc3NyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuOTI3OCIgc3R5bGU9InN0b3AtY29sb3I6Izc3Nzc3NyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xOS4xLDEyYzAuMSw0LTMuMSw3LjItNy4xLDcuMlM0LjgsMTYsNC44LDEyUzgsNC44LDEyLDQuOFYzYy01LDAtOSw0LTksOXM0LDksOSw5czktNCw5LTlIMTkuMXoiLz4KICA8L3N2Zz4=);
-        }
-        .ghostWhite-0-2-132 {
-          color: #ffffff;
-          border: none;
-          background: transparent;
-          padding-left: 0;
-          padding-right: 0;
-        }
-        .ghostWhite-0-2-132:hover, .ghostWhite-0-2-132:active {
-          opacity: 0.6;
-        }
-        .ghostWhite-0-2-132.disabled-0-2-134 {
-          color: #ffffff !important;
-          border: none !important;
-          background: transparent !important;
-        }
-        .ghostWhite-0-2-132 .loadIcon-0-2-143 {
-          background: url(data:image/svg+xml;base64,CiAgPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgogICAgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogICAgPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KICAgICAgLnN0MHtmaWxsOnVybCgjU1ZHSURfMV8pO30KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IlNWR0lEXzFfIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjIxIiB5MT0iMTIiIHgyPSIzIiB5Mj0iMTIiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMTc3OCIgc3R5bGU9InN0b3AtY29sb3I6I2ZmZmZmZjtzdG9wLW9wYWNpdHk6MCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuMjI3MSIgc3R5bGU9InN0b3AtY29sb3I6I2ZmZmZmZjtzdG9wLW9wYWNpdHk6MC4xIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4zMTU3IiBzdHlsZT0ic3RvcC1jb2xvcjojZmZmZmZmO3N0b3Atb3BhY2l0eTowLjQiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjQ1MjUiIHN0eWxlPSJzdG9wLWNvbG9yOiNmZmZmZmY7c3RvcC1vcGFjaXR5OjAuNyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNTU0NiIgc3R5bGU9InN0b3AtY29sb3I6I2ZmZmZmZiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuOTI3OCIgc3R5bGU9InN0b3AtY29sb3I6I2ZmZmZmZiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xOS4xLDEyYzAuMSw0LTMuMSw3LjItNy4xLDcuMlM0LjgsMTYsNC44LDEyUzgsNC44LDEyLDQuOFYzYy01LDAtOSw0LTksOXM0LDksOSw5czktNCw5LTlIMTkuMXoiLz4KICA8L3N2Zz4=);
-        }
-        .loading-0-2-133 {
-          pointer-events: none;
-        }
-        .loading-0-2-133 .cont-0-2-124 {
-          visibility: hidden;
-        }
-        .disabled-0-2-134 {
-          color: #ffffff;
-          border: 1px solid #f13465;
-          cursor: default;
-          opacity: 0.4;
-          background: #f13465;
-          pointer-events: none;
-        }
-        .disabled-0-2-134:hover, .disabled-0-2-134:active, .disabled-0-2-134:focus {
-          color: #ffffff;
-          border: 1px solid #f13465;
-          background: #f13465;
-        }
-        .md-0-2-135 {
-          height: 40px;
-          font-size: 15px;
-          line-height: 24px;
-        }
-        .md-0-2-135.iconOnly-0-2-141 {
-          padding: 0 12px;
-        }
-        .lg-0-2-136 {
-          height: 48px;
-          font-size: 15px;
-          line-height: 24px;
-        }
-        .lg-0-2-136.iconOnly-0-2-141 {
-          padding: 0 16px;
-        }
-        .block-0-2-137 {
-          width: 100%;
-          display: block;
-        }
-        .iconLeft-0-2-138 {
-          margin-right: 4px;
-        }
-        .iconRight-0-2-139 {
-          margin-left: 4px;
-        }
-        @-webkit-keyframes keyframes-iconRotate-0-2-140 {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-        .iconOnly-0-2-141 {
-          padding: 0 8px;
-        }
-        .round-0-2-142 {
-          border-radius: 50%;
-        }
-        .loadIcon-0-2-143 {
-          width: 24px;
-          height: 24px;
-          display: inline-block;
-          animation: keyframes-iconRotate-0-2-140 1s infinite linear;
-          transition: 0.3s all;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .row-0-2-173 {
-          box-sizing: border-box;
-          margin-left: -12px;
-          margin-right: -12px;
-        }
-        .row-0-2-173:before, .row-0-2-173:after {
-          content: "";
-          display: table;
-        }
-        .row-0-2-173:after {
-          clear: both;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .col-0-2-174 {
-          position: relative;
-          box-sizing: border-box;
-          min-height: 1px;
-          padding-left: 12px;
-          padding-right: 12px;
-        }
-        .xxs1-0-2-175 {
-          float: left;
-          width: 8.333333333333334%;
-        }
-        .offset-xxs1-0-2-176 {
-          margin-left: 8.333333333333334%;
-        }
-        .push-xxs1-0-2-177 {
-          left: 8.333333333333334%;
-        }
-        .pull-xxs1-0-2-178 {
-          right: 8.333333333333334%;
-        }
-        .xxs2-0-2-199 {
-          float: left;
-          width: 16.666666666666668%;
-        }
-        .offset-xxs2-0-2-200 {
-          margin-left: 16.666666666666668%;
-        }
-        .push-xxs2-0-2-201 {
-          left: 16.666666666666668%;
-        }
-        .pull-xxs2-0-2-202 {
-          right: 16.666666666666668%;
-        }
-        .xxs3-0-2-223 {
-          float: left;
-          width: 25%;
-        }
-        .offset-xxs3-0-2-224 {
-          margin-left: 25%;
-        }
-        .push-xxs3-0-2-225 {
-          left: 25%;
-        }
-        .pull-xxs3-0-2-226 {
-          right: 25%;
-        }
-        .xxs4-0-2-247 {
-          float: left;
-          width: 33.333333333333336%;
-        }
-        .offset-xxs4-0-2-248 {
-          margin-left: 33.333333333333336%;
-        }
-        .push-xxs4-0-2-249 {
-          left: 33.333333333333336%;
-        }
-        .pull-xxs4-0-2-250 {
-          right: 33.333333333333336%;
-        }
-        .xxs5-0-2-271 {
-          float: left;
-          width: 41.66666666666667%;
-        }
-        .offset-xxs5-0-2-272 {
-          margin-left: 41.66666666666667%;
-        }
-        .push-xxs5-0-2-273 {
-          left: 41.66666666666667%;
-        }
-        .pull-xxs5-0-2-274 {
-          right: 41.66666666666667%;
-        }
-        .xxs6-0-2-295 {
-          float: left;
-          width: 50%;
-        }
-        .offset-xxs6-0-2-296 {
-          margin-left: 50%;
-        }
-        .push-xxs6-0-2-297 {
-          left: 50%;
-        }
-        .pull-xxs6-0-2-298 {
-          right: 50%;
-        }
-        .xxs7-0-2-319 {
-          float: left;
-          width: 58.333333333333336%;
-        }
-        .offset-xxs7-0-2-320 {
-          margin-left: 58.333333333333336%;
-        }
-        .push-xxs7-0-2-321 {
-          left: 58.333333333333336%;
-        }
-        .pull-xxs7-0-2-322 {
-          right: 58.333333333333336%;
-        }
-        .xxs8-0-2-343 {
-          float: left;
-          width: 66.66666666666667%;
-        }
-        .offset-xxs8-0-2-344 {
-          margin-left: 66.66666666666667%;
-        }
-        .push-xxs8-0-2-345 {
-          left: 66.66666666666667%;
-        }
-        .pull-xxs8-0-2-346 {
-          right: 66.66666666666667%;
-        }
-        .xxs9-0-2-367 {
-          float: left;
-          width: 75%;
-        }
-        .offset-xxs9-0-2-368 {
-          margin-left: 75%;
-        }
-        .push-xxs9-0-2-369 {
-          left: 75%;
-        }
-        .pull-xxs9-0-2-370 {
-          right: 75%;
-        }
-        .xxs10-0-2-391 {
-          float: left;
-          width: 83.33333333333334%;
-        }
-        .offset-xxs10-0-2-392 {
-          margin-left: 83.33333333333334%;
-        }
-        .push-xxs10-0-2-393 {
-          left: 83.33333333333334%;
-        }
-        .pull-xxs10-0-2-394 {
-          right: 83.33333333333334%;
-        }
-        .xxs11-0-2-415 {
-          float: left;
-          width: 91.66666666666667%;
-        }
-        .offset-xxs11-0-2-416 {
-          margin-left: 91.66666666666667%;
-        }
-        .push-xxs11-0-2-417 {
-          left: 91.66666666666667%;
-        }
-        .pull-xxs11-0-2-418 {
-          right: 91.66666666666667%;
-        }
-        .xxs12-0-2-439 {
-          float: left;
-          width: 100%;
-        }
-        .offset-xxs12-0-2-440 {
-          margin-left: 100%;
-        }
-        .push-xxs12-0-2-441 {
-          left: 100%;
-        }
-        .pull-xxs12-0-2-442 {
-          right: 100%;
-        }
-        @media (min-width: 576px) {
-          .xs1-0-2-179 {
-            float: left;
-            width: 8.333333333333334%;
-          }
-          .offset-xs1-0-2-180 {
-            margin-left: 8.333333333333334%;
-          }
-          .push-xs1-0-2-181 {
-            left: 8.333333333333334%;
-          }
-          .pull-xs1-0-2-182 {
-            right: 8.333333333333334%;
-          }
-          .xs2-0-2-203 {
-            float: left;
-            width: 16.666666666666668%;
-          }
-          .offset-xs2-0-2-204 {
-            margin-left: 16.666666666666668%;
-          }
-          .push-xs2-0-2-205 {
-            left: 16.666666666666668%;
-          }
-          .pull-xs2-0-2-206 {
-            right: 16.666666666666668%;
-          }
-          .xs3-0-2-227 {
-            float: left;
-            width: 25%;
-          }
-          .offset-xs3-0-2-228 {
-            margin-left: 25%;
-          }
-          .push-xs3-0-2-229 {
-            left: 25%;
-          }
-          .pull-xs3-0-2-230 {
-            right: 25%;
-          }
-          .xs4-0-2-251 {
-            float: left;
-            width: 33.333333333333336%;
-          }
-          .offset-xs4-0-2-252 {
-            margin-left: 33.333333333333336%;
-          }
-          .push-xs4-0-2-253 {
-            left: 33.333333333333336%;
-          }
-          .pull-xs4-0-2-254 {
-            right: 33.333333333333336%;
-          }
-          .xs5-0-2-275 {
-            float: left;
-            width: 41.66666666666667%;
-          }
-          .offset-xs5-0-2-276 {
-            margin-left: 41.66666666666667%;
-          }
-          .push-xs5-0-2-277 {
-            left: 41.66666666666667%;
-          }
-          .pull-xs5-0-2-278 {
-            right: 41.66666666666667%;
-          }
-          .xs6-0-2-299 {
-            float: left;
-            width: 50%;
-          }
-          .offset-xs6-0-2-300 {
-            margin-left: 50%;
-          }
-          .push-xs6-0-2-301 {
-            left: 50%;
-          }
-          .pull-xs6-0-2-302 {
-            right: 50%;
-          }
-          .xs7-0-2-323 {
-            float: left;
-            width: 58.333333333333336%;
-          }
-          .offset-xs7-0-2-324 {
-            margin-left: 58.333333333333336%;
-          }
-          .push-xs7-0-2-325 {
-            left: 58.333333333333336%;
-          }
-          .pull-xs7-0-2-326 {
-            right: 58.333333333333336%;
-          }
-          .xs8-0-2-347 {
-            float: left;
-            width: 66.66666666666667%;
-          }
-          .offset-xs8-0-2-348 {
-            margin-left: 66.66666666666667%;
-          }
-          .push-xs8-0-2-349 {
-            left: 66.66666666666667%;
-          }
-          .pull-xs8-0-2-350 {
-            right: 66.66666666666667%;
-          }
-          .xs9-0-2-371 {
-            float: left;
-            width: 75%;
-          }
-          .offset-xs9-0-2-372 {
-            margin-left: 75%;
-          }
-          .push-xs9-0-2-373 {
-            left: 75%;
-          }
-          .pull-xs9-0-2-374 {
-            right: 75%;
-          }
-          .xs10-0-2-395 {
-            float: left;
-            width: 83.33333333333334%;
-          }
-          .offset-xs10-0-2-396 {
-            margin-left: 83.33333333333334%;
-          }
-          .push-xs10-0-2-397 {
-            left: 83.33333333333334%;
-          }
-          .pull-xs10-0-2-398 {
-            right: 83.33333333333334%;
-          }
-          .xs11-0-2-419 {
-            float: left;
-            width: 91.66666666666667%;
-          }
-          .offset-xs11-0-2-420 {
-            margin-left: 91.66666666666667%;
-          }
-          .push-xs11-0-2-421 {
-            left: 91.66666666666667%;
-          }
-          .pull-xs11-0-2-422 {
-            right: 91.66666666666667%;
-          }
-          .xs12-0-2-443 {
-            float: left;
-            width: 100%;
-          }
-          .offset-xs12-0-2-444 {
-            margin-left: 100%;
-          }
-          .push-xs12-0-2-445 {
-            left: 100%;
-          }
-          .pull-xs12-0-2-446 {
-            right: 100%;
-          }
-        }
-        @media (min-width: 768px) {
-          .sm1-0-2-183 {
-            float: left;
-            width: 8.333333333333334%;
-          }
-          .offset-sm1-0-2-184 {
-            margin-left: 8.333333333333334%;
-          }
-          .push-sm1-0-2-185 {
-            left: 8.333333333333334%;
-          }
-          .pull-sm1-0-2-186 {
-            right: 8.333333333333334%;
-          }
-          .sm2-0-2-207 {
-            float: left;
-            width: 16.666666666666668%;
-          }
-          .offset-sm2-0-2-208 {
-            margin-left: 16.666666666666668%;
-          }
-          .push-sm2-0-2-209 {
-            left: 16.666666666666668%;
-          }
-          .pull-sm2-0-2-210 {
-            right: 16.666666666666668%;
-          }
-          .sm3-0-2-231 {
-            float: left;
-            width: 25%;
-          }
-          .offset-sm3-0-2-232 {
-            margin-left: 25%;
-          }
-          .push-sm3-0-2-233 {
-            left: 25%;
-          }
-          .pull-sm3-0-2-234 {
-            right: 25%;
-          }
-          .sm4-0-2-255 {
-            float: left;
-            width: 33.333333333333336%;
-          }
-          .offset-sm4-0-2-256 {
-            margin-left: 33.333333333333336%;
-          }
-          .push-sm4-0-2-257 {
-            left: 33.333333333333336%;
-          }
-          .pull-sm4-0-2-258 {
-            right: 33.333333333333336%;
-          }
-          .sm5-0-2-279 {
-            float: left;
-            width: 41.66666666666667%;
-          }
-          .offset-sm5-0-2-280 {
-            margin-left: 41.66666666666667%;
-          }
-          .push-sm5-0-2-281 {
-            left: 41.66666666666667%;
-          }
-          .pull-sm5-0-2-282 {
-            right: 41.66666666666667%;
-          }
-          .sm6-0-2-303 {
-            float: left;
-            width: 50%;
-          }
-          .offset-sm6-0-2-304 {
-            margin-left: 50%;
-          }
-          .push-sm6-0-2-305 {
-            left: 50%;
-          }
-          .pull-sm6-0-2-306 {
-            right: 50%;
-          }
-          .sm7-0-2-327 {
-            float: left;
-            width: 58.333333333333336%;
-          }
-          .offset-sm7-0-2-328 {
-            margin-left: 58.333333333333336%;
-          }
-          .push-sm7-0-2-329 {
-            left: 58.333333333333336%;
-          }
-          .pull-sm7-0-2-330 {
-            right: 58.333333333333336%;
-          }
-          .sm8-0-2-351 {
-            float: left;
-            width: 66.66666666666667%;
-          }
-          .offset-sm8-0-2-352 {
-            margin-left: 66.66666666666667%;
-          }
-          .push-sm8-0-2-353 {
-            left: 66.66666666666667%;
-          }
-          .pull-sm8-0-2-354 {
-            right: 66.66666666666667%;
-          }
-          .sm9-0-2-375 {
-            float: left;
-            width: 75%;
-          }
-          .offset-sm9-0-2-376 {
-            margin-left: 75%;
-          }
-          .push-sm9-0-2-377 {
-            left: 75%;
-          }
-          .pull-sm9-0-2-378 {
-            right: 75%;
-          }
-          .sm10-0-2-399 {
-            float: left;
-            width: 83.33333333333334%;
-          }
-          .offset-sm10-0-2-400 {
-            margin-left: 83.33333333333334%;
-          }
-          .push-sm10-0-2-401 {
-            left: 83.33333333333334%;
-          }
-          .pull-sm10-0-2-402 {
-            right: 83.33333333333334%;
-          }
-          .sm11-0-2-423 {
-            float: left;
-            width: 91.66666666666667%;
-          }
-          .offset-sm11-0-2-424 {
-            margin-left: 91.66666666666667%;
-          }
-          .push-sm11-0-2-425 {
-            left: 91.66666666666667%;
-          }
-          .pull-sm11-0-2-426 {
-            right: 91.66666666666667%;
-          }
-          .sm12-0-2-447 {
-            float: left;
-            width: 100%;
-          }
-          .offset-sm12-0-2-448 {
-            margin-left: 100%;
-          }
-          .push-sm12-0-2-449 {
-            left: 100%;
-          }
-          .pull-sm12-0-2-450 {
-            right: 100%;
-          }
-        }
-        @media (min-width: 992px) {
-          .md1-0-2-187 {
-            float: left;
-            width: 8.333333333333334%;
-          }
-          .offset-md1-0-2-188 {
-            margin-left: 8.333333333333334%;
-          }
-          .push-md1-0-2-189 {
-            left: 8.333333333333334%;
-          }
-          .pull-md1-0-2-190 {
-            right: 8.333333333333334%;
-          }
-          .md2-0-2-211 {
-            float: left;
-            width: 16.666666666666668%;
-          }
-          .offset-md2-0-2-212 {
-            margin-left: 16.666666666666668%;
-          }
-          .push-md2-0-2-213 {
-            left: 16.666666666666668%;
-          }
-          .pull-md2-0-2-214 {
-            right: 16.666666666666668%;
-          }
-          .md3-0-2-235 {
-            float: left;
-            width: 25%;
-          }
-          .offset-md3-0-2-236 {
-            margin-left: 25%;
-          }
-          .push-md3-0-2-237 {
-            left: 25%;
-          }
-          .pull-md3-0-2-238 {
-            right: 25%;
-          }
-          .md4-0-2-259 {
-            float: left;
-            width: 33.333333333333336%;
-          }
-          .offset-md4-0-2-260 {
-            margin-left: 33.333333333333336%;
-          }
-          .push-md4-0-2-261 {
-            left: 33.333333333333336%;
-          }
-          .pull-md4-0-2-262 {
-            right: 33.333333333333336%;
-          }
-          .md5-0-2-283 {
-            float: left;
-            width: 41.66666666666667%;
-          }
-          .offset-md5-0-2-284 {
-            margin-left: 41.66666666666667%;
-          }
-          .push-md5-0-2-285 {
-            left: 41.66666666666667%;
-          }
-          .pull-md5-0-2-286 {
-            right: 41.66666666666667%;
-          }
-          .md6-0-2-307 {
-            float: left;
-            width: 50%;
-          }
-          .offset-md6-0-2-308 {
-            margin-left: 50%;
-          }
-          .push-md6-0-2-309 {
-            left: 50%;
-          }
-          .pull-md6-0-2-310 {
-            right: 50%;
-          }
-          .md7-0-2-331 {
-            float: left;
-            width: 58.333333333333336%;
-          }
-          .offset-md7-0-2-332 {
-            margin-left: 58.333333333333336%;
-          }
-          .push-md7-0-2-333 {
-            left: 58.333333333333336%;
-          }
-          .pull-md7-0-2-334 {
-            right: 58.333333333333336%;
-          }
-          .md8-0-2-355 {
-            float: left;
-            width: 66.66666666666667%;
-          }
-          .offset-md8-0-2-356 {
-            margin-left: 66.66666666666667%;
-          }
-          .push-md8-0-2-357 {
-            left: 66.66666666666667%;
-          }
-          .pull-md8-0-2-358 {
-            right: 66.66666666666667%;
-          }
-          .md9-0-2-379 {
-            float: left;
-            width: 75%;
-          }
-          .offset-md9-0-2-380 {
-            margin-left: 75%;
-          }
-          .push-md9-0-2-381 {
-            left: 75%;
-          }
-          .pull-md9-0-2-382 {
-            right: 75%;
-          }
-          .md10-0-2-403 {
-            float: left;
-            width: 83.33333333333334%;
-          }
-          .offset-md10-0-2-404 {
-            margin-left: 83.33333333333334%;
-          }
-          .push-md10-0-2-405 {
-            left: 83.33333333333334%;
-          }
-          .pull-md10-0-2-406 {
-            right: 83.33333333333334%;
-          }
-          .md11-0-2-427 {
-            float: left;
-            width: 91.66666666666667%;
-          }
-          .offset-md11-0-2-428 {
-            margin-left: 91.66666666666667%;
-          }
-          .push-md11-0-2-429 {
-            left: 91.66666666666667%;
-          }
-          .pull-md11-0-2-430 {
-            right: 91.66666666666667%;
-          }
-          .md12-0-2-451 {
-            float: left;
-            width: 100%;
-          }
-          .offset-md12-0-2-452 {
-            margin-left: 100%;
-          }
-          .push-md12-0-2-453 {
-            left: 100%;
-          }
-          .pull-md12-0-2-454 {
-            right: 100%;
-          }
-        }
-        @media (min-width: 1200px) {
-          .lg1-0-2-191 {
-            float: left;
-            width: 8.333333333333334%;
-          }
-          .offset-lg1-0-2-192 {
-            margin-left: 8.333333333333334%;
-          }
-          .push-lg1-0-2-193 {
-            left: 8.333333333333334%;
-          }
-          .pull-lg1-0-2-194 {
-            right: 8.333333333333334%;
-          }
-          .lg2-0-2-215 {
-            float: left;
-            width: 16.666666666666668%;
-          }
-          .offset-lg2-0-2-216 {
-            margin-left: 16.666666666666668%;
-          }
-          .push-lg2-0-2-217 {
-            left: 16.666666666666668%;
-          }
-          .pull-lg2-0-2-218 {
-            right: 16.666666666666668%;
-          }
-          .lg3-0-2-239 {
-            float: left;
-            width: 25%;
-          }
-          .offset-lg3-0-2-240 {
-            margin-left: 25%;
-          }
-          .push-lg3-0-2-241 {
-            left: 25%;
-          }
-          .pull-lg3-0-2-242 {
-            right: 25%;
-          }
-          .lg4-0-2-263 {
-            float: left;
-            width: 33.333333333333336%;
-          }
-          .offset-lg4-0-2-264 {
-            margin-left: 33.333333333333336%;
-          }
-          .push-lg4-0-2-265 {
-            left: 33.333333333333336%;
-          }
-          .pull-lg4-0-2-266 {
-            right: 33.333333333333336%;
-          }
-          .lg5-0-2-287 {
-            float: left;
-            width: 41.66666666666667%;
-          }
-          .offset-lg5-0-2-288 {
-            margin-left: 41.66666666666667%;
-          }
-          .push-lg5-0-2-289 {
-            left: 41.66666666666667%;
-          }
-          .pull-lg5-0-2-290 {
-            right: 41.66666666666667%;
-          }
-          .lg6-0-2-311 {
-            float: left;
-            width: 50%;
-          }
-          .offset-lg6-0-2-312 {
-            margin-left: 50%;
-          }
-          .push-lg6-0-2-313 {
-            left: 50%;
-          }
-          .pull-lg6-0-2-314 {
-            right: 50%;
-          }
-          .lg7-0-2-335 {
-            float: left;
-            width: 58.333333333333336%;
-          }
-          .offset-lg7-0-2-336 {
-            margin-left: 58.333333333333336%;
-          }
-          .push-lg7-0-2-337 {
-            left: 58.333333333333336%;
-          }
-          .pull-lg7-0-2-338 {
-            right: 58.333333333333336%;
-          }
-          .lg8-0-2-359 {
-            float: left;
-            width: 66.66666666666667%;
-          }
-          .offset-lg8-0-2-360 {
-            margin-left: 66.66666666666667%;
-          }
-          .push-lg8-0-2-361 {
-            left: 66.66666666666667%;
-          }
-          .pull-lg8-0-2-362 {
-            right: 66.66666666666667%;
-          }
-          .lg9-0-2-383 {
-            float: left;
-            width: 75%;
-          }
-          .offset-lg9-0-2-384 {
-            margin-left: 75%;
-          }
-          .push-lg9-0-2-385 {
-            left: 75%;
-          }
-          .pull-lg9-0-2-386 {
-            right: 75%;
-          }
-          .lg10-0-2-407 {
-            float: left;
-            width: 83.33333333333334%;
-          }
-          .offset-lg10-0-2-408 {
-            margin-left: 83.33333333333334%;
-          }
-          .push-lg10-0-2-409 {
-            left: 83.33333333333334%;
-          }
-          .pull-lg10-0-2-410 {
-            right: 83.33333333333334%;
-          }
-          .lg11-0-2-431 {
-            float: left;
-            width: 91.66666666666667%;
-          }
-          .offset-lg11-0-2-432 {
-            margin-left: 91.66666666666667%;
-          }
-          .push-lg11-0-2-433 {
-            left: 91.66666666666667%;
-          }
-          .pull-lg11-0-2-434 {
-            right: 91.66666666666667%;
-          }
-          .lg12-0-2-455 {
-            float: left;
-            width: 100%;
-          }
-          .offset-lg12-0-2-456 {
-            margin-left: 100%;
-          }
-          .push-lg12-0-2-457 {
-            left: 100%;
-          }
-          .pull-lg12-0-2-458 {
-            right: 100%;
-          }
-        }
-        @media (min-width: 1500px) {
-          .xl1-0-2-195 {
-            float: left;
-            width: 8.333333333333334%;
-          }
-          .offset-xl1-0-2-196 {
-            margin-left: 8.333333333333334%;
-          }
-          .push-xl1-0-2-197 {
-            left: 8.333333333333334%;
-          }
-          .pull-xl1-0-2-198 {
-            right: 8.333333333333334%;
-          }
-          .xl2-0-2-219 {
-            float: left;
-            width: 16.666666666666668%;
-          }
-          .offset-xl2-0-2-220 {
-            margin-left: 16.666666666666668%;
-          }
-          .push-xl2-0-2-221 {
-            left: 16.666666666666668%;
-          }
-          .pull-xl2-0-2-222 {
-            right: 16.666666666666668%;
-          }
-          .xl3-0-2-243 {
-            float: left;
-            width: 25%;
-          }
-          .offset-xl3-0-2-244 {
-            margin-left: 25%;
-          }
-          .push-xl3-0-2-245 {
-            left: 25%;
-          }
-          .pull-xl3-0-2-246 {
-            right: 25%;
-          }
-          .xl4-0-2-267 {
-            float: left;
-            width: 33.333333333333336%;
-          }
-          .offset-xl4-0-2-268 {
-            margin-left: 33.333333333333336%;
-          }
-          .push-xl4-0-2-269 {
-            left: 33.333333333333336%;
-          }
-          .pull-xl4-0-2-270 {
-            right: 33.333333333333336%;
-          }
-          .xl5-0-2-291 {
-            float: left;
-            width: 41.66666666666667%;
-          }
-          .offset-xl5-0-2-292 {
-            margin-left: 41.66666666666667%;
-          }
-          .push-xl5-0-2-293 {
-            left: 41.66666666666667%;
-          }
-          .pull-xl5-0-2-294 {
-            right: 41.66666666666667%;
-          }
-          .xl6-0-2-315 {
-            float: left;
-            width: 50%;
-          }
-          .offset-xl6-0-2-316 {
-            margin-left: 50%;
-          }
-          .push-xl6-0-2-317 {
-            left: 50%;
-          }
-          .pull-xl6-0-2-318 {
-            right: 50%;
-          }
-          .xl7-0-2-339 {
-            float: left;
-            width: 58.333333333333336%;
-          }
-          .offset-xl7-0-2-340 {
-            margin-left: 58.333333333333336%;
-          }
-          .push-xl7-0-2-341 {
-            left: 58.333333333333336%;
-          }
-          .pull-xl7-0-2-342 {
-            right: 58.333333333333336%;
-          }
-          .xl8-0-2-363 {
-            float: left;
-            width: 66.66666666666667%;
-          }
-          .offset-xl8-0-2-364 {
-            margin-left: 66.66666666666667%;
-          }
-          .push-xl8-0-2-365 {
-            left: 66.66666666666667%;
-          }
-          .pull-xl8-0-2-366 {
-            right: 66.66666666666667%;
-          }
-          .xl9-0-2-387 {
-            float: left;
-            width: 75%;
-          }
-          .offset-xl9-0-2-388 {
-            margin-left: 75%;
-          }
-          .push-xl9-0-2-389 {
-            left: 75%;
-          }
-          .pull-xl9-0-2-390 {
-            right: 75%;
-          }
-          .xl10-0-2-411 {
-            float: left;
-            width: 83.33333333333334%;
-          }
-          .offset-xl10-0-2-412 {
-            margin-left: 83.33333333333334%;
-          }
-          .push-xl10-0-2-413 {
-            left: 83.33333333333334%;
-          }
-          .pull-xl10-0-2-414 {
-            right: 83.33333333333334%;
-          }
-          .xl11-0-2-435 {
-            float: left;
-            width: 91.66666666666667%;
-          }
-          .offset-xl11-0-2-436 {
-            margin-left: 91.66666666666667%;
-          }
-          .push-xl11-0-2-437 {
-            left: 91.66666666666667%;
-          }
-          .pull-xl11-0-2-438 {
-            right: 91.66666666666667%;
-          }
-          .xl12-0-2-459 {
-            float: left;
-            width: 100%;
-          }
-          .offset-xl12-0-2-460 {
-            margin-left: 100%;
-          }
-          .push-xl12-0-2-461 {
-            left: 100%;
-          }
-          .pull-xl12-0-2-462 {
-            right: 100%;
-          }
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .conFluid-0-2-60 {
-          box-sizing: border-box;
-          margin-left: auto;
-          margin-right: auto;
-          padding-left: 12px;
-          padding-right: 12px;
-        }
-        .conFluid-0-2-60:before, .conFluid-0-2-60:after {
-          content: "";
-          display: table;
-        }
-        .conFluid-0-2-60:after {
-          clear: both;
-        }
-        .con-0-2-61 {
-          margin: 0 auto;
-          box-sizing: border-box;
-          margin-left: auto;
-          margin-right: auto;
-          padding-left: 12px;
-          padding-right: 12px;
-        }
-        .con-0-2-61:before, .con-0-2-61:after {
-          content: "";
-          display: table;
-        }
-        .con-0-2-61:after {
-          clear: both;
-        }
-        @media (min-width: 576px) {
-          .con-0-2-61 {
-            width: 564px;
-          }
-        }
-        @media (min-width: 768px) {
-          .con-0-2-61 {
-            width: 744px;
-          }
-        }
-        @media (min-width: 992px) {
-          .con-0-2-61 {
-            width: 984px;
-          }
-        }
-        @media (min-width: 1200px) {
-          .con-0-2-61 {
-            width: 1164px;
-          }
-        }
-        @media (min-width: 1500px) {
-          .con-0-2-61 {
-            width: 1464px;
-          }
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .link-0-2-78 {
-          display: inline-block;
-          text-decoration: none;
-        }
-        .text-0-2-79 {
-          cursor: pointer;
-          display: inline-block;
-          opacity: 0.6;
-          transition: 0.3s all;
-        }
-        .text-0-2-79:hover {
-          opacity: 1;
-        }
-        .selected-0-2-80 {
-          cursor: default;
-          opacity: 1;
-        }
-        .notification-0-2-81 {
-          width: 8px;
-          height: 8px;
-          display: inline-block;
-          margin-left: 4px;
-          border-radius: 50%;
-          margin-bottom: 1px;
-          background-color: #db3737;
-        }
-    </style>    
-    <style data-jss="" data-meta="Unthemed">
-        .cont-0-2-62 {
-          cursor: pointer;
-          height: 64px;
-          display: inline-block;
-          position: relative;
-        }
-        .cont-0-2-62:after {
-          left: 0;
-          width: 100%;
-          bottom: 0;
-          height: 3px;
-          content: "";
-          position: absolute;
-          background: transparent;
-          transition: 0.3s all;
-        }
-        .white-0-2-63 {
-          color: #ffffff;
-        }
-        .black-0-2-64 {
-          color: #777777;
-        }
-        .black-0-2-64:hover {
-          color: #222222;
-        }
-        .flex-0-2-65 {
-          height: 64px;
-        }
-        .selected-0-2-66 {
-          color: #083cae;
-        }
-        .selected-0-2-66:hover {
-          color: #083cae;
-        }
-        .selectedWhite-0-2-67 {
-          color: #ffffff;
-        }
-        .selectedWhite-0-2-67:hover {
-          color: #ffffff;
-        }
-        .showBar-0-2-68:after {
-          background: #083cae;
-        }
-        .showBarSec-0-2-69:after {
-          background: #f13465;
-        }
-        .text-0-2-71 {
-          transition: 0.3s all;
-          text-transform: uppercase;
-        }
-        .pushText-0-2-72 {
-          margin-left: 4px;
-        }
-        .withOpacity-0-2-73 {
-          opacity: 0.6;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .container-0-2-39 {
-          width: 100%;
-          z-index: 999;
-          position: relative;
-          transition: 0.3s all;
-        }
-        .fixed-0-2-40 {
-          top: 0;
-          left: 0;
-          position: fixed;
-        }
-        .bottom-0-2-41 {
-          top: auto;
-          bottom: 0;
-        }
-        .show-0-2-42 {
-          margin-top: 0;
-        }
-        .hide-0-2-43 {
-          margin-top: -64px;
-        }
-        .hide-0-2-43 .nav-0-2-45 {
-          box-shadow: none !important;
-        }
-        .isScrolled-0-2-44 .nav-0-2-45 {
-          box-shadow: 0 6px 5px -3px rgba(0,0,0,0.12), 0 6px 18px 0 rgba(0,29,124,0.08);
-        }
-        .isScrolled-0-2-44 .blue-0-2-48 {
-          background: rgba(0, 43, 153, 0.95);
-        }
-        .isScrolled-0-2-44 .white-0-2-49 {
-          background: rgba(255, 255, 255, 0.95);
-        }
-        .nav-0-2-45 {
-          height: 64px;
-          box-shadow: 0 1px 2px 0 rgba(0,0,0,0.12), 0 1px 6px 0 rgba(0,29,124,0.05);
-          transition: 0.3s all;
-        }
-        .grid-0-2-46 {
-          height: 100%;
-          position: relative;
-          max-width: 100%;
-        }
-        .tab-0-2-47 {
-          height: 100%;
-        }
-        .blue-0-2-48 {
-          background: #002b99;
-        }
-        .white-0-2-49 {
-          background: #ffffff;
-        }
-        .left-0-2-50 .button-0-2-53, .left-0-2-50 .iconWrap-0-2-55 {
-          margin-right: 24px;
-        }
-        .left-0-2-50 .button-0-2-53:first-child, .left-0-2-50 .iconWrap-0-2-55:first-child {
-          margin-left: 0;
-        }
-        .left-0-2-50 .navItem-0-2-54 {
-          margin-right: 16px;
-        }
-        .left-0-2-50 .navItem-0-2-54:first-child {
-          margin-left: 0;
-        }
-        .left-0-2-50 .logo-0-2-59 {
-          margin-right: 32px;
-        }
-        .right-0-2-51 .button-0-2-53, .right-0-2-51 .iconWrap-0-2-55 {
-          margin-left: 24px;
-        }
-        .right-0-2-51 .button-0-2-53:first-child, .right-0-2-51 .iconWrap-0-2-55:first-child {
-          margin-right: 0;
-        }
-        .right-0-2-51 .navItem-0-2-54 {
-          margin-left: 16px;
-        }
-        .right-0-2-51 .navItem-0-2-54:first-child {
-          margin-right: 0;
-        }
-        .right-0-2-51 .logo-0-2-59 {
-          margin-left: 32px;
-        }
-        .center-0-2-52 {
-          top: 50%;
-          left: 50%;
-          position: absolute;
-          transform: translate(-50%, -50%);
-        }
-        .center-0-2-52 .button-0-2-53, .center-0-2-52 .iconWrap-0-2-55, .center-0-2-52 .logo-0-2-59 {
-          margin-left: 12px;
-          margin-right: 12px;
-        }
-        .center-0-2-52 .button-0-2-53:first-child, .center-0-2-52 .iconWrap-0-2-55:first-child {
-          margin-left: 0;
-        }
-        .center-0-2-52 .button-0-2-53:last-child, .center-0-2-52 .iconWrap-0-2-55:last-child {
-          margin-right: 0;
-        }
-        .center-0-2-52 .navItem-0-2-54 {
-          margin-left: 8px;
-          margin-right: 8px;
-        }
-        .center-0-2-52 .navItem-0-2-54:first-child {
-          margin-right: 0;
-        }
-        .iconWrap-0-2-55 {
-          display: inline-block;
-        }
-        .arrow-0-2-57 {
-          transition: 0.3s all;
-          margin-bottom: -4px;
-        }
-        .arrowUp-0-2-58 {
-          transform: rotate(180deg);
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .logo-0-2-76 {
-          border: 0;
-          display: inline-block;
-          outline: 0;
-          box-sizing: border-box;
-        }
-        .click-0-2-77 {
-          cursor: pointer;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .card-0-2-518 {
-          padding: 16px;
-          position: relative;
-          background: #ffffff;
-          transition: 0.3s box-shadow, 0.3s transform;
-          border-radius: 6px;
-        }
-        @media screen and (min-width:768px) {
-          .card-0-2-518 {
-            padding: 32px;
-          }
-        }
-        .cardNoPadding-0-2-519 {
-          padding: 0;
-          position: relative;
-          background: #ffffff;
-          transition: 0.3s box-shadow, 0.3s transform;
-          border-radius: 6px;
-        }
-        @media screen and (min-width:768px) {
-          .cardNoPadding-0-2-519 {
-            padding: 0;
-          }
-        }
-        .flat-0-2-520 {
-          z-index: auto;
-          box-shadow: 0 1px 2px 0 rgba(0,0,0,0.12), 0 1px 6px 0 rgba(0,29,124,0.05);
-        }
-        .rest-0-2-521 {
-          z-index: auto;
-          box-shadow: 0 0 0 0 rgba(0,0,0,0.0), 0 0 0 0 rgba(0,29,124,0);
-        }
-        .raised-0-2-522 {
-          z-index: 4;
-          box-shadow: 0 12px 9px -5px rgba(0,0,0,0.12), 0 10px 32px 0 rgba(0,29,124,0.12);
-        }
-        .raisable-0-2-523:hover {
-          z-index: 4;
-          transform: translateY(-4px);
-          box-shadow: 0 12px 9px -5px rgba(0,0,0,0.12), 0 10px 32px 0 rgba(0,29,124,0.12);
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .bars-0-2-36 {
-          margin-right: 16px;
-        }
-        .navItem-0-2-37 {
-          margin-right: 16px;
-        }
-        .navItem-0-2-37:first-child {
-          margin-left: 0;
-        }
-        .hide-0-2-38 {
-          display: none;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .list-0-2-657 {
-          height: 0;
-          opacity: 0;
-          overflow: hidden;
-          transform: translateY(-16px);
-          transition: 0.3s all;
-          pointer-events: none;
-        }
-        .toggle-0-2-658 {
-          height: auto;
-          opacity: 1;
-          transform: translateY(0);
-          pointer-events: all;
-        }
-        .collapsible-0-2-659 {
-          cursor: pointer;
-        }
-        .arrow-0-2-660 {
-          margin-left: 8px;
-          margin-bottom: -4px;
-        }
-        .arrowUp-0-2-661 {
-          transform: rotate(-180deg);
-        }
-        .link-0-2-662 {
-          color: #444444;
-          text-decoration: none;
-        }
-        .link-0-2-662:hover, .link-0-2-662:focus, .link-0-2-662:active {
-          color: #777777;
-        }
-        .iconWrapper-0-2-663 {
-          display: inline-block;
-          margin-right: 8px;
-          margin-bottom: 8px;
-        }
-        .title-0-2-664 {
-          margin-bottom: 8px;
-        }
-        .titleColor-0-2-665 {
-          color: #444444;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .content-0-2-780 {
-          margin-top: 144px;
-          padding-top: 24px;
-          margin-bottom: 8px;
-        }
-        @media screen and (min-width:768px) {
-          .content-0-2-780 {
-            margin-bottom: 40px;
-          }
-        }
-        @media screen and (max-width:767px) {
-          .content-0-2-780 {
-            width: 100%;
-            padding: 0;
-          }
-        }
-        .card-0-2-781 {
-          overflow: hidden;
-        }
-        @media screen and (max-width:767px), (min-width:991px) {
-          .card-0-2-781 {
-            padding: 0;
-            box-shadow: none;
-            border-radius: 0;
-          }
-        }
-        @media screen and (min-width:991px) {
-          .blueLineDesktop-0-2-782:before {
-            top: 144px;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            content: "";
-            position: absolute;
-            background-color: #001d7c;
-          }
-        }
-        @media screen and (max-width:991px) {
-          .blueLine-0-2-783:before {
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            content: "";
-            position: absolute;
-            background-color: #001d7c;
-          }
-        }
-        .showApplyButton-0-2-784 {
-          margin-top: 16px;
-        }
-        .showApplyButton-0-2-784 button {
-          width: 350px;
-        }
-        .applyButtonFixed-0-2-785 {
-          transition: 0.3s all;
-        }
-        @media screen and (max-width:767px) {
-          .applyButtonFixed-0-2-785 {
-            left: 0;
-            width: 100%;
-            bottom: 0;
-            padding: 16px 24px;
-            z-index: 999;
-            position: fixed;
-            background: #ffffff;
-            box-shadow: 0 -0.5px 4px 0 rgba(0,0,0,.28);
-            min-height: 75px;
-            overflow-x: hidden;
-            margin-bottom: 0;
-          }
-        }
-        .hideButton-0-2-786 {
-          transform: translateY(140px);
-        }
-        @media screen and (max-width: 767px) {
-          .jobHeaderDesktop-0-2-787 {
-            display: none;
-          }
-        }
-        @media screen and (min-width: 768px) {
-          .jobHeaderMobile-0-2-788 {
-            display: none;
-          }
-        }
-        @media screen and (max-width:767px) {
-          .descriptionContainer-0-2-789 {
-            padding: 0 24px;
-          }
-        }
-        .iconPadding-0-2-790 {
-          padding: 8px;
-          margin-top: 8px;
-          margin-bottom: -16px;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .flex-0-2-4 {
-          display: flex;
-        }
-        .iFlex-0-2-5 {
-          display: inline-flex;
-        }
-        .row-0-2-6 {
-          flex-direction: row;
-        }
-        .rowR-0-2-7 {
-          flex-direction: row-reverse;
-        }
-        .col-0-2-8 {
-          flex-direction: column;
-        }
-        .colR-0-2-9 {
-          flex-direction: column-reverse;
-        }
-        .noWrap-0-2-10 {
-          flex-wrap: nowrap;
-        }
-        .wrap-0-2-11 {
-          flex-wrap: wrap;
-        }
-        .wrapR-0-2-12 {
-          flex-wrap: wrap-reverse;
-        }
-        .jstart-0-2-13 {
-          justify-content: flex-start;
-        }
-        .jend-0-2-14 {
-          justify-content: flex-end;
-        }
-        .jcenter-0-2-15 {
-          justify-content: center;
-        }
-        .jbetween-0-2-16 {
-          justify-content: space-between;
-        }
-        .jaround-0-2-17 {
-          justify-content: space-around;
-        }
-        .jevenly-0-2-18 {
-          justify-content: space-evenly;
-        }
-        .astart-0-2-19 {
-          align-items: flex-start;
-        }
-        .aend-0-2-20 {
-          align-items: flex-end;
-        }
-        .acenter-0-2-21 {
-          align-items: center;
-        }
-        .abase-0-2-22 {
-          align-items: baseline;
-        }
-        .astretch-0-2-23 {
-          align-items: stretch;
-        }
-        .cstart-0-2-24 {
-          align-content: flex-start;
-        }
-        .cend-0-2-25 {
-          align-content: flex-end;
-        }
-        .ccenter-0-2-26 {
-          align-content: center;
-        }
-        .cbetween-0-2-27 {
-          align-content: space-between;
-        }
-        .caround-0-2-28 {
-          align-content: space-around;
-        }
-        .cstretch-0-2-29 {
-          align-content: stretch;
-        }
-        .sauto-0-2-30 {
-          align-self: auto;
-        }
-        .sstart-0-2-31 {
-          align-self: flex-start;
-        }
-        .send-0-2-32 {
-          align-self: flex-end;
-        }
-        .scenter-0-2-33 {
-          align-self: center;
-        }
-        .sbase-0-2-34 {
-          align-self: baseline;
-        }
-        .sstretch-0-2-35 {
-          align-self: stretch;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .divider-0-2-707 {
-          border-bottom: 1px solid #e4edff;
-        }
-        .topXTiny-0-2-708 {
-          margin-top: 4px;
-        }
-        .topTiny-0-2-709 {
-          margin-top: 8px;
-        }
-        .topSmall-0-2-710 {
-          margin-top: 16px;
-        }
-        .topBase-0-2-711 {
-          margin-top: 24px;
-        }
-        .topMedium-0-2-712 {
-          margin-top: 32px;
-        }
-        .topLarge-0-2-713 {
-          margin-top: 48px;
-        }
-        .topXLarge-0-2-714 {
-          margin-top: 64px;
-        }
-        .bottomXTiny-0-2-715 {
-          margin-bottom: 4px;
-        }
-        .bottomTiny-0-2-716 {
-          margin-bottom: 8px;
-        }
-        .bottomSmall-0-2-717 {
-          margin-bottom: 16px;
-        }
-        .bottomBase-0-2-718 {
-          margin-bottom: 24px;
-        }
-        .bottomMedium-0-2-719 {
-          margin-bottom: 32px;
-        }
-        .bottomLarge-0-2-720 {
-          margin-bottom: 48px;
-        }
-        .bottomXLarge-0-2-721 {
-          margin-bottom: 64px;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .detail-0-2-555 {
-          margin-bottom: 8px;
-        }
-        .rightSpacing-0-2-556 {
-          margin-right: 4px;
-        }
-        .link-0-2-557 {
-          text-decoration: none;
-        }
-        .link-0-2-557 > span:hover {
-          color: #777777;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .content-0-2-492 {
-          margin-top: 144px;
-          padding-top: 24px;
-          margin-bottom: 8px;
-        }
-        @media screen and (min-width:768px) {
-          .content-0-2-492 {
-            margin-bottom: 40px;
-          }
-        }
-        @media screen and (max-width:767px) {
-          .content-0-2-492 {
-            width: 100%;
-            padding: 0;
-          }
-        }
-        .card-0-2-493 {
-          overflow: hidden;
-        }
-        @media screen and (max-width:767px), (min-width:991px) {
-          .card-0-2-493 {
-            padding: 0;
-            box-shadow: none;
-            border-radius: 0;
-          }
-        }
-        @media screen and (min-width:991px) {
-          .blueLineDesktop-0-2-494:before {
-            top: 144px;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            content: "";
-            position: absolute;
-            background-color: #001d7c;
-          }
-        }
-        @media screen and (max-width:991px) {
-          .blueLine-0-2-495:before {
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            content: "";
-            position: absolute;
-            background-color: #001d7c;
-          }
-        }
-        .showApplyButton-0-2-496 {
-          margin-top: 16px;
-        }
-        .showApplyButton-0-2-496 button {
-          width: 350px;
-        }
-        .applyButtonFixed-0-2-497 {
-          transition: 0.3s all;
-        }
-        @media screen and (max-width:767px) {
-          .applyButtonFixed-0-2-497 {
-            left: 0;
-            width: 100%;
-            bottom: 0;
-            padding: 16px 24px;
-            z-index: 999;
-            position: fixed;
-            background: #ffffff;
-            box-shadow: 0 -0.5px 4px 0 rgba(0,0,0,.28);
-            min-height: 75px;
-            overflow-x: hidden;
-            margin-bottom: 0;
-          }
-        }
-        .hideButton-0-2-498 {
-          transform: translateY(140px);
-        }
-        @media screen and (max-width: 767px) {
-          .jobHeaderDesktop-0-2-499 {
-            display: none;
-          }
-        }
-        @media screen and (min-width: 768px) {
-          .jobHeaderMobile-0-2-500 {
-            display: none;
-          }
-        }
-        @media screen and (max-width:767px) {
-          .descriptionContainer-0-2-501 {
-            padding: 0 24px;
-          }
-        }
-        .iconPadding-0-2-502 {
-          padding: 8px;
-          margin-top: 8px;
-          margin-bottom: -16px;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .headerContainer-0-2-509 {
-          width: 100%;
-          padding: 0;
-        }
-        .title-0-2-510 {
-          word-break: break-word;
-        }
-        .titleRow-0-2-511 {
-          margin-top: 8px;
-        }
-        .tag-0-2-512 {
-          padding: 0 8px;
-          background: #083cae;
-          border-radius: 12px;
-          margin-bottom: 4px;
-        }
-        .socialMediaIcons-0-2-513 {
-          gap: 4px;
-          display: flex;
-        }
-        .commissions-0-2-514 {
-          gap: 0 4px;
-          flex-wrap: wrap;
-          margin-top: 4px;
-        }
-        .company-0-2-515 {
-          margin-top: 4px;
-        }
-        .location-0-2-516 {
-          margin-left: 4px;
-        }
-        .rating-0-2-517 {
-          margin-top: 4px;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .similarJob-0-2-766 {
-          padding: 24px 16px;
-          border-left: solid 1px #dddddd;
-        }
-        .firstSplitItem-0-2-767 {
-          border-left: none;
-        }
-        .link-0-2-636 {
-          text-decoration: none;
-        }
-        .similarJobLink-0-2-637 {
-          margin-top: 8px;
-          text-decoration: none;
-        }
-        .overflow-0-2-638 {
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-        }
-        .card-0-2-639 {
-          padding: 16px 24px;
-          margin-bottom: 8px;
-        }
-    </style>
-    <style data-jss="" data-meta="Unthemed">
-        .carouselCont-0-2-627 {
-          position: relative;
-        }
-        .arrows-0-2-628 {
-          right: 12px;
-          bottom: calc(100% + 8px);
-          position: absolute;
-        }
-        .disabled-0-2-629 {
-          cursor: default;
-        }
-        .carouselWrap-0-2-630 {
-          overflow: hidden;
-        }
-        .carousel-0-2-631 {
-          transition: 0.3s all;
-        }
-        .item-0-2-632 {
-          min-width: 0;
-        }
-        .arrowRight-0-2-633 {
-          margin-right: 8px;
-        }
-    </style>
-  </head>
-  <body>
-    <div class="card-0-2-518 flat-0-2-520 card-0-2-781 blueLine-0-2-783">
-      <div class="jobHeaderDesktop-0-2-787">
-        <div class="con-0-2-61 headerContainer-0-2-509">
-          <div class="flex-0-2-4 jbetween-0-2-16">
-            <p class="text-0-2-82 standard-0-2-89 midEmphasis-0-2-104">
-              Hace 3 días
-            </p>
-            <div>
-              <label
-                class="text-0-2-82 micro-0-2-91 white-0-2-100 strong-0-2-92 tag-0-2-725"
-                >Recomendada</label
-              >
-            </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="card-0-2-518 flat-0-2-520 card-0-2-781 blueLine-0-2-783">
+    <div class="jobHeaderDesktop-0-2-787">
+      <div class="con-0-2-61 headerContainer-0-2-509">
+        <div class="flex-0-2-4 jbetween-0-2-16">
+          <p class="text-0-2-82 standard-0-2-89 midEmphasis-0-2-104">
+            Hace 3 días
+          </p>
+          <div>
+            <label class="text-0-2-82 micro-0-2-91 white-0-2-100 strong-0-2-92 tag-0-2-725">Recomendada</label>
           </div>
-          <div
-            class="flex-0-2-4 jbetween-0-2-16 astart-0-2-19 titleRow-0-2-724"
-          >
-            <p
-              class="text-0-2-82 heading-0-2-85 highEmphasis-0-2-103 title-0-2-723"
-            >
-              Reclutador Headhunter zona Santa fe
-            </p>
-            <div class="socialMediaIcons-0-2-726">
-              <button
-                class="btn-0-2-123 ghostGrey-0-2-131 md-0-2-135 iconOnly-0-2-141 round-0-2-142"
-                aria-label="Compartir"
-              >
-                <span class="cont-0-2-124"
-                  ><svg
-                    class="icon-0-2-74 atomic__share-o"
-                    width="18"
-                    height="18"
-                    fill="currentcolor"
-                    style="transition: none 0s ease 0s"
-                  >
-                 </span>
-              </button>
-              <div class="listsContainer-0-2-731"></div>
-            </div>
-          </div>
-          <div class="flex-0-2-4 commissions-0-2-727">
-            <p class="text-0-2-82 subheading-0-2-86 highEmphasis-0-2-103">
-              $9,000 - $11,000 Mensual
-            </p>
-            <span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103"
-              >+ comisiones</span
-            >
-          </div>
-          <div class="company-0-2-728">
-            <span
-              class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92"
-              >Grupo Salinas</span
-            ><span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">
-              en</span
-            ><label
-              class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 location-0-2-729"
-              >Santa Fe, </label
-            ><label
-              class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 location-0-2-729"
-              >Álvaro Obregón, </label
-            ><label
-              class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 location-0-2-729"
-              >CDMX</label
-            >
-          </div>
-          <div class="rating-0-2-730"></div>
         </div>
-        <div class="flex-0-2-4 jbetween-0-2-16 aend-0-2-20">
-          <div class="showApplyButton-0-2-784">
-            <button
-              class="btn-0-2-123 primary-0-2-126 md-0-2-135 button-0-2-791"
-            >
-              <span class="cont-0-2-124">Postularme</span>
+        <div class="flex-0-2-4 jbetween-0-2-16 astart-0-2-19 titleRow-0-2-724">
+          <p class="text-0-2-82 heading-0-2-85 highEmphasis-0-2-103 title-0-2-723">
+            Reclutador Headhunter zona Santa fe
+          </p>
+          <div class="socialMediaIcons-0-2-726">
+            <button class="btn-0-2-123 ghostGrey-0-2-131 md-0-2-135 iconOnly-0-2-141 round-0-2-142"
+              aria-label="Compartir">
+              <span class="cont-0-2-124"><svg class="icon-0-2-74 atomic__share-o" width="18" height="18"
+                  fill="currentcolor" style="transition: none 0s ease 0s">
+              </span>
             </button>
+            <div class="listsContainer-0-2-731"></div>
           </div>
-          <a href="empleos/bolsa-de-trabajo-Grupo-Salinas/" rel="nofollow"
-            ><div class="iconWrap-0-2-735">
-              <span
-                style="
+        </div>
+        <div class="flex-0-2-4 commissions-0-2-727">
+          <p class="text-0-2-82 subheading-0-2-86 highEmphasis-0-2-103">
+            $9,000 - $11,000 Mensual
+          </p>
+          <span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">+ comisiones</span>
+        </div>
+        <div class="company-0-2-728">
+          <span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92">Grupo Salinas</span><span
+            class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">
+            en</span><label class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 location-0-2-729">Santa Fe,
+          </label><label class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 location-0-2-729">Álvaro Obregón,
+          </label><label class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 location-0-2-729">CDMX</label>
+        </div>
+        <div class="rating-0-2-730"></div>
+      </div>
+      <div class="flex-0-2-4 jbetween-0-2-16 aend-0-2-20">
+        <div class="showApplyButton-0-2-784">
+          <button class="btn-0-2-123 primary-0-2-126 md-0-2-135 button-0-2-791">
+            <span class="cont-0-2-124">Postularme</span>
+          </button>
+        </div>
+        <a href="empleos/bolsa-de-trabajo-Grupo-Salinas/" rel="nofollow">
+          <div class="iconWrap-0-2-735">
+            <span style="
                   box-sizing: border-box;
                   display: inline-block;
                   overflow: hidden;
@@ -2403,9 +71,7 @@
                   padding: 0px;
                   position: relative;
                   max-width: 100%;
-                "
-                ><span
-                  style="
+                "><span style="
                     box-sizing: border-box;
                     display: block;
                     width: initial;
@@ -2416,12 +82,9 @@
                     margin: 0px;
                     padding: 0px;
                     max-width: 100%;
-                  "
-                  ><img
-                    alt=""
-                    aria-hidden="true"
-                    src="data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 version=%271.1%27 width=%2780%27 height=%2780%27/%3e"
-                    style="
+                  "><img alt="" aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 version=%271.1%27 width=%2780%27 height=%2780%27/%3e"
+                  style="
                       display: block;
                       max-width: 100%;
                       width: initial;
@@ -2431,18 +94,12 @@
                       border: 0px;
                       margin: 0px;
                       padding: 0px;
-                    " /></span
-                ><img
-                  alt="Company logo"
-                  src="/jobs/_next/image/?url=https%3A%2F%2Fcdn-h4.occ.com.mx%2Fimages%2Flogos%2F300x300%2Fed%2Fed950862564940b9ad57e3cb126ffc45.jpg&amp;w=256&amp;q=75"
-                  decoding="async"
-                  data-nimg="intrinsic"
-                  class="image-0-2-737"
-                  srcset="
+                    " /></span><img alt="Company logo"
+                src="/jobs/_next/image/?url=https%3A%2F%2Fcdn-h4.occ.com.mx%2Fimages%2Flogos%2F300x300%2Fed%2Fed950862564940b9ad57e3cb126ffc45.jpg&amp;w=256&amp;q=75"
+                decoding="async" data-nimg="intrinsic" class="image-0-2-737" srcset="
                     /jobs/_next/image/?url=https%3A%2F%2Fcdn-h4.occ.com.mx%2Fimages%2Flogos%2F300x300%2Fed%2Fed950862564940b9ad57e3cb126ffc45.jpg&amp;w=96&amp;q=75  1x,
                     /jobs/_next/image/?url=https%3A%2F%2Fcdn-h4.occ.com.mx%2Fimages%2Flogos%2F300x300%2Fed%2Fed950862564940b9ad57e3cb126ffc45.jpg&amp;w=256&amp;q=75 2x
-                  "
-                  style="
+                  " style="
                     position: absolute;
                     inset: 0px;
                     box-sizing: border-box;
@@ -2456,101 +113,63 @@
                     max-width: 100%;
                     min-height: 100%;
                     max-height: 100%;
-                  "
-              /></span></div
-          ></a>
-        </div>
+                  " /></span>
+          </div>
+        </a>
       </div>
-      <div class="jobHeaderMobile-0-2-788">
-        <div class="conFluid-0-2-60 content-0-2-792">
-          <div class="flex-0-2-4 jbetween-0-2-16 acenter-0-2-21">
-            <p class="text-0-2-82 standard-0-2-89 midEmphasis-0-2-104">
-              Hace 3 días
-            </p>
-            <div>
-              <button
-                class="btn-0-2-123 ghostGrey-0-2-131 md-0-2-135 iconOnly-0-2-141 round-0-2-142"
-                aria-label="Compartir"
-              >
-                <span class="cont-0-2-124"
-                  ><svg
-                    class="icon-0-2-74 atomic__share-o"
-                    width="18"
-                    height="18"
-                    fill="currentcolor"
-                    style="transition: none 0s ease 0s"
-                  >
-                    <use
-                      xlink:href="/jobs-assets/atomic-icons-1.5.1.svg#atomic__share-o"
-                    ></use></svg
-                ></span>
-              </button>
-              <div class="listsContainer-0-2-731"></div>
-            </div>
-          </div>
-          <label
-            class="text-0-2-82 micro-0-2-91 white-0-2-100 strong-0-2-92 tag-0-2-794"
-            >Recomendada</label
-          >
-          <p
-            class="text-0-2-82 heading-0-2-85 highEmphasis-0-2-103 title-0-2-795"
-          >
-            Reclutador Headhunter zona Santa fe
+    </div>
+    <div class="jobHeaderMobile-0-2-788">
+      <div class="conFluid-0-2-60 content-0-2-792">
+        <div class="flex-0-2-4 jbetween-0-2-16 acenter-0-2-21">
+          <p class="text-0-2-82 standard-0-2-89 midEmphasis-0-2-104">
+            Hace 3 días
           </p>
-          <div class="flex-0-2-4 commissions-0-2-796">
-            <p class="text-0-2-82 subheading-0-2-86 highEmphasis-0-2-103">
-              $9,000 - $11,000 Mensual
-            </p>
-            <span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103"
-              >+ comisiones</span
-            >
+          <div>
+            <button class="btn-0-2-123 ghostGrey-0-2-131 md-0-2-135 iconOnly-0-2-141 round-0-2-142"
+              aria-label="Compartir">
+              <span class="cont-0-2-124"><svg class="icon-0-2-74 atomic__share-o" width="18" height="18"
+                  fill="currentcolor" style="transition: none 0s ease 0s">
+                  <use xlink:href="/jobs-assets/atomic-icons-1.5.1.svg#atomic__share-o"></use>
+                </svg></span>
+            </button>
+            <div class="listsContainer-0-2-731"></div>
           </div>
-          <p
-            class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 topXTiny-0-2-109 strong-0-2-92"
-          >
-            Grupo Salinas
+        </div>
+        <label class="text-0-2-82 micro-0-2-91 white-0-2-100 strong-0-2-92 tag-0-2-794">Recomendada</label>
+        <p class="text-0-2-82 heading-0-2-85 highEmphasis-0-2-103 title-0-2-795">
+          Reclutador Headhunter zona Santa fe
+        </p>
+        <div class="flex-0-2-4 commissions-0-2-796">
+          <p class="text-0-2-82 subheading-0-2-86 highEmphasis-0-2-103">
+            $9,000 - $11,000 Mensual
           </p>
-          <div class="rating-0-2-800"></div>
-          <div class="flex-0-2-4 jbetween-0-2-16 acenter-0-2-21">
-            <div class="location-0-2-797">
-              <p class="text-0-2-82 small-0-2-90 midEmphasis-0-2-104">
-                en
-                <label
-                  class="text-0-2-82 small-0-2-90 midEmphasis-0-2-104 place-0-2-798"
-                  >Santa Fe,</label
-                ><label
-                  class="text-0-2-82 small-0-2-90 midEmphasis-0-2-104 place-0-2-798"
-                  >Álvaro Obregón,</label
-                ><label
-                  class="text-0-2-82 small-0-2-90 midEmphasis-0-2-104 place-0-2-798"
-                  >CDMX</label
-                >
-              </p>
-              <div class="hiring-0-2-799">
-                <div class="contents-0-2-801">
-                  <label class="text-0-2-82 small-0-2-90 midEmphasis-0-2-104"
-                    ><a
-                      href="/empleos/tiempo-completo"
-                      title="Buscar empleos en Tiempo completo"
-                      rel="nofollow"
-                      class="link-0-2-802 inkLightTheme-0-2-803"
-                      >Tiempo completo</a
-                    >,
-                    <a
-                      href="/empleos/permanente"
-                      title="Buscar empleos en Permanente"
-                      rel="nofollow"
-                      class="link-0-2-802 inkLightTheme-0-2-803"
-                      >Permanente</a
-                    ></label
-                  >
-                </div>
+          <span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">+ comisiones</span>
+        </div>
+        <p class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 topXTiny-0-2-109 strong-0-2-92">
+          Grupo Salinas
+        </p>
+        <div class="rating-0-2-800"></div>
+        <div class="flex-0-2-4 jbetween-0-2-16 acenter-0-2-21">
+          <div class="location-0-2-797">
+            <p class="text-0-2-82 small-0-2-90 midEmphasis-0-2-104">
+              en
+              <label class="text-0-2-82 small-0-2-90 midEmphasis-0-2-104 place-0-2-798">Santa Fe,</label><label
+                class="text-0-2-82 small-0-2-90 midEmphasis-0-2-104 place-0-2-798">Álvaro Obregón,</label><label
+                class="text-0-2-82 small-0-2-90 midEmphasis-0-2-104 place-0-2-798">CDMX</label>
+            </p>
+            <div class="hiring-0-2-799">
+              <div class="contents-0-2-801">
+                <label class="text-0-2-82 small-0-2-90 midEmphasis-0-2-104"><a href="/empleos/tiempo-completo"
+                    title="Buscar empleos en Tiempo completo" rel="nofollow"
+                    class="link-0-2-802 inkLightTheme-0-2-803">Tiempo completo</a>,
+                  <a href="/empleos/permanente" title="Buscar empleos en Permanente" rel="nofollow"
+                    class="link-0-2-802 inkLightTheme-0-2-803">Permanente</a></label>
               </div>
             </div>
-            <a href="empleos/bolsa-de-trabajo-Grupo-Salinas/" rel="nofollow"
-              ><div class="iconWrap-0-2-735">
-                <span
-                  style="
+          </div>
+          <a href="empleos/bolsa-de-trabajo-Grupo-Salinas/" rel="nofollow">
+            <div class="iconWrap-0-2-735">
+              <span style="
                     box-sizing: border-box;
                     display: inline-block;
                     overflow: hidden;
@@ -2563,9 +182,7 @@
                     padding: 0px;
                     position: relative;
                     max-width: 100%;
-                  "
-                  ><span
-                    style="
+                  "><span style="
                       box-sizing: border-box;
                       display: block;
                       width: initial;
@@ -2576,12 +193,9 @@
                       margin: 0px;
                       padding: 0px;
                       max-width: 100%;
-                    "
-                    ><img
-                      alt=""
-                      aria-hidden="true"
-                      src="data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 version=%271.1%27 width=%2748%27 height=%2748%27/%3e"
-                      style="
+                    "><img alt="" aria-hidden="true"
+                    src="data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 version=%271.1%27 width=%2748%27 height=%2748%27/%3e"
+                    style="
                         display: block;
                         max-width: 100%;
                         width: initial;
@@ -2591,18 +205,12 @@
                         border: 0px;
                         margin: 0px;
                         padding: 0px;
-                      " /></span
-                  ><img
-                    alt="Company logo"
-                    src="/jobs/_next/image/?url=https%3A%2F%2Fcdn-h4.occ.com.mx%2Fimages%2Flogos%2F300x300%2Fed%2Fed950862564940b9ad57e3cb126ffc45.jpg&amp;w=96&amp;q=75"
-                    decoding="async"
-                    data-nimg="intrinsic"
-                    class="image-0-2-737"
-                    srcset="
+                      " /></span><img alt="Company logo"
+                  src="/jobs/_next/image/?url=https%3A%2F%2Fcdn-h4.occ.com.mx%2Fimages%2Flogos%2F300x300%2Fed%2Fed950862564940b9ad57e3cb126ffc45.jpg&amp;w=96&amp;q=75"
+                  decoding="async" data-nimg="intrinsic" class="image-0-2-737" srcset="
                       /jobs/_next/image/?url=https%3A%2F%2Fcdn-h4.occ.com.mx%2Fimages%2Flogos%2F300x300%2Fed%2Fed950862564940b9ad57e3cb126ffc45.jpg&amp;w=48&amp;q=75 1x,
                       /jobs/_next/image/?url=https%3A%2F%2Fcdn-h4.occ.com.mx%2Fimages%2Flogos%2F300x300%2Fed%2Fed950862564940b9ad57e3cb126ffc45.jpg&amp;w=96&amp;q=75 2x
-                    "
-                    style="
+                    " style="
                       position: absolute;
                       inset: 0px;
                       box-sizing: border-box;
@@ -2616,513 +224,336 @@
                       max-width: 100%;
                       min-height: 100%;
                       max-height: 100%;
-                    "
-                /></span></div
-            ></a>
-          </div>
-        </div>
-        <div class="col-0-2-174 xxs12-0-2-439 applyButtonFixed-0-2-785">
-          <button
-            class="btn-0-2-123 primary-0-2-126 md-0-2-135 block-0-2-137 button-0-2-791"
-          >
-            <span class="cont-0-2-124">Postularme</span>
-          </button>
+                    " /></span>
+            </div>
+          </a>
         </div>
       </div>
-      <div class="descriptionContainer-0-2-789">
-        <div class="divider-0-2-707 topSmall-0-2-710 bottomSmall-0-2-717"></div>
+      <div class="col-0-2-174 xxs12-0-2-439 applyButtonFixed-0-2-785">
+        <button class="btn-0-2-123 primary-0-2-126 md-0-2-135 block-0-2-137 button-0-2-791">
+          <span class="cont-0-2-124">Postularme</span>
+        </button>
+      </div>
+    </div>
+    <div class="descriptionContainer-0-2-789">
+      <div class="divider-0-2-707 topSmall-0-2-710 bottomSmall-0-2-717"></div>
+      <div>
         <div>
-          <div>
-            <p
-              class="text-0-2-82 subheading-0-2-86 highEmphasis-0-2-103 bottomSmall-0-2-118"
-            >
-              Sobre el empleo
-            </p>
-            <div class="flex-0-2-4 wrap-0-2-11 categories-0-2-738">
-              <div>
-                <span
-                  class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92"
-                  >Categoría: </span
-                ><a
-                  href="/empleos/trabajo-en-recursos-humanos/"
-                  class="link-0-2-740"
-                  ><span
-                    class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103"
-                    >Recursos humanos</span
-                  ></a
-                >
-              </div>
-              <div>
-                <span
-                  class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92"
-                  >Subcategoría: </span
-                ><a
-                  href="/empleos/trabajo-en-recursos-humanos-reclutamiento-y-seleccion-de-personal/"
-                  class="link-0-2-740"
-                  ><span
-                    class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103"
-                    >Reclutamiento y selección de personal</span
-                  ></a
-                >
-              </div>
-            </div>
-            <div class="education-0-2-739">
-              <span
-                class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92"
-                >Educación mínima requerida: </span
-              ><span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103"
-                >Universitario titulado</span
-              >
-            </div>
-          </div>
-          <div
-            class="divider-0-2-707 topSmall-0-2-710 bottomSmall-0-2-717"
-          ></div>
-          <p
-            class="text-0-2-82 subheading-0-2-86 highEmphasis-0-2-103 bottomSmall-0-2-118"
-          >
-            Detalles
+          <p class="text-0-2-82 subheading-0-2-86 highEmphasis-0-2-103 bottomSmall-0-2-118">
+            Sobre el empleo
           </p>
-          <div class="detail-0-2-741">
-            <span
-              class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92 rightSpacing-0-2-742"
-              >Contratación:</span
-            ><a class="link-0-2-743" href="/empleos/permanente/"
-              ><span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103"
-                >Permanente</span
-              ></a
-            >
+          <div class="flex-0-2-4 wrap-0-2-11 categories-0-2-738">
+            <div>
+              <span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92">Categoría: </span><a
+                href="/empleos/trabajo-en-recursos-humanos/" class="link-0-2-740"><span
+                  class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">Recursos humanos</span></a>
+            </div>
+            <div>
+              <span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92">Subcategoría: </span><a
+                href="/empleos/trabajo-en-recursos-humanos-reclutamiento-y-seleccion-de-personal/"
+                class="link-0-2-740"><span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">Reclutamiento y
+                  selección de personal</span></a>
+            </div>
           </div>
-          <div class="detail-0-2-741">
-            <span
-              class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92 rightSpacing-0-2-742"
-              >Horario:</span
-            ><a class="link-0-2-743" href="/empleos/tiempo-completo/"
-              ><span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103"
-                >Tiempo completo</span
-              ></a
-            >
+          <div class="education-0-2-739">
+            <span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92">Educación mínima requerida:
+            </span><span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">Universitario titulado</span>
           </div>
+        </div>
+        <div class="divider-0-2-707 topSmall-0-2-710 bottomSmall-0-2-717"></div>
+        <p class="text-0-2-82 subheading-0-2-86 highEmphasis-0-2-103 bottomSmall-0-2-118">
+          Detalles
+        </p>
+        <div class="detail-0-2-741">
           <span
-            class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92 rightSpacing-0-2-742"
-            >Espacio de trabajo:</span
-          ><a class="link-0-2-743" href="/empleos/tipo-en-oficina/"
-            ><span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103"
-              >Presencial</span
-            ></a
-          >
-          <div
-            class="divider-0-2-707 topSmall-0-2-710 bottomSmall-0-2-717"
-          ></div>
-          <p
-            class="text-0-2-82 subheading-0-2-86 highEmphasis-0-2-103 bottomSmall-0-2-118"
-          >
-            Beneficios
-          </p>
-          <ul>
-            <li class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">
-              Prestaciones de ley (IMSS, vacaciones, aguinaldo)
-            </li>
-            <li class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">
-              Plan de crecimiento personal y laboral
-            </li>
-            <li class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">
-              Excelente esquema de comisiones
-            </li>
-          </ul>
-          <div
-            class="divider-0-2-707 topSmall-0-2-710 bottomSmall-0-2-717"
-          ></div>
-          <p
-            class="text-0-2-82 subheading-0-2-86 highEmphasis-0-2-103 bottomSmall-0-2-118"
-          >
-            Descripción
-          </p>
-          <div class="adBodyDescription-0-2-744 spacing-0-2-745" id="jobbody">
-            <div class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">
-              <div class="noMargin-0-2-746">
-                <p><br /></p>
-                <p>Analista de Reclutamiento y Selección</p>
-                <p><br /></p>
-                <p>
-                  Por expansión Totalplay te invita a formar parte de su equipo
-                  de trabajo como Reclutador
-                </p>
-                <p><br /></p>
-                <p><strong>OFRECEMOS</strong></p>
-                <p><br /></p>
-                <p>Sueldo Base Mensual $9000</p>
-                <p>Bono de $2,000 por productividad</p>
-                <p>
-                  Comisiones por candidato contratado (de $300 a $500
-                  dependiendo el volumen)
-                </p>
-                <p>Línea telefonica</p>
-                <p>Equipo de computo</p>
-                <p>Prestaciones de ley</p>
-                <p>Seguro de vida</p>
-                <p>Descuentos Totalplay</p>
-                <p><br /></p>
-                <p><strong>REQUERIMOS</strong></p>
-                <p><br /></p>
-                <p>
-                  Escolaridad: Lic. Concluida o trunca en psicología, pedagogía,
-                  administración o a fín
-                </p>
-                <p>
-                  Contar con experiencia en reclutamiento masivo (promotores,
-                  vendedores cambaceo, comisionistas etc) manejo de bolsas
-                  digitales, redes sociales
-                </p>
-                <p>Contar con experiencia en reclutamiento minimo 1 año</p>
-                <p><br /></p>
-                <p><strong>ACTIVIDADES</strong></p>
-                <p><br /></p>
-                <p>
-                  Atracción de talento por diferentes fuentes de reclutamiento
-                </p>
-                <p>Atención al cliente</p>
-                <p>
-                  Cumplir con la meta semanal y mensual (cobertura y disminución
-                  de rotación)
-                </p>
-                <p>Armado de expediente</p>
-                <p>Manejo de excel para reportes</p>
-                <p><br /></p>
-                <p>
-                  Zona a reclutar Las Aguilas, San Bartolo, Santa Rosa, Santa
-                  Lucía, Centenario
-                </p>
-                <p><br /></p>
-                <p>No vivir a más de una hora de la zona a trabajar</p>
-                <p><br /></p>
-                <p>
-                  Interesados enviar su cv con fotografía Lic. Laura Salazar,
-                  indispensable contar con experiencia en reclutamiento
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="divider-0-2-707 topSmall-0-2-710 bottomSmall-0-2-717"
-          ></div>
-          <div class="flex-0-2-4 jend-0-2-14 wrapper-0-2-747">
-            <div class="flex-0-2-4 col-0-2-8 aend-0-2-20 text-0-2-748">
-              <button class="btn-0-2-123 ghostPink-0-2-130">
-                <span class="cont-0-2-124">Reportar vacante</span>
-              </button>
-              <p class="text-0-2-82 micro-0-2-91 highEmphasis-0-2-103">
-                ID: 16397185
+            class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92 rightSpacing-0-2-742">Contratación:</span><a
+            class="link-0-2-743" href="/empleos/permanente/"><span
+              class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">Permanente</span></a>
+        </div>
+        <div class="detail-0-2-741">
+          <span
+            class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92 rightSpacing-0-2-742">Horario:</span><a
+            class="link-0-2-743" href="/empleos/tiempo-completo/"><span
+              class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">Tiempo completo</span></a>
+        </div>
+        <span class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92 rightSpacing-0-2-742">Espacio de
+          trabajo:</span><a class="link-0-2-743" href="/empleos/tipo-en-oficina/"><span
+            class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">Presencial</span></a>
+        <div class="divider-0-2-707 topSmall-0-2-710 bottomSmall-0-2-717"></div>
+        <p class="text-0-2-82 subheading-0-2-86 highEmphasis-0-2-103 bottomSmall-0-2-118">
+          Beneficios
+        </p>
+        <ul>
+          <li class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">
+            Prestaciones de ley (IMSS, vacaciones, aguinaldo)
+          </li>
+          <li class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">
+            Plan de crecimiento personal y laboral
+          </li>
+          <li class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">
+            Excelente esquema de comisiones
+          </li>
+        </ul>
+        <div class="divider-0-2-707 topSmall-0-2-710 bottomSmall-0-2-717"></div>
+        <p class="text-0-2-82 subheading-0-2-86 highEmphasis-0-2-103 bottomSmall-0-2-118">
+          Descripción
+        </p>
+        <div class="adBodyDescription-0-2-744 spacing-0-2-745" id="jobbody">
+          <div class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103">
+            <div class="noMargin-0-2-746">
+              <p><br /></p>
+              <p>Analista de Reclutamiento y Selección</p>
+              <p><br /></p>
+              <p>
+                Por expansión Totalplay te invita a formar parte de su equipo
+                de trabajo como Reclutador
+              </p>
+              <p><br /></p>
+              <p><strong>OFRECEMOS</strong></p>
+              <p><br /></p>
+              <p>Sueldo Base Mensual $9000</p>
+              <p>Bono de $2,000 por productividad</p>
+              <p>
+                Comisiones por candidato contratado (de $300 a $500
+                dependiendo el volumen)
+              </p>
+              <p>Línea telefonica</p>
+              <p>Equipo de computo</p>
+              <p>Prestaciones de ley</p>
+              <p>Seguro de vida</p>
+              <p>Descuentos Totalplay</p>
+              <p><br /></p>
+              <p><strong>REQUERIMOS</strong></p>
+              <p><br /></p>
+              <p>
+                Escolaridad: Lic. Concluida o trunca en psicología, pedagogía,
+                administración o a fín
+              </p>
+              <p>
+                Contar con experiencia en reclutamiento masivo (promotores,
+                vendedores cambaceo, comisionistas etc) manejo de bolsas
+                digitales, redes sociales
+              </p>
+              <p>Contar con experiencia en reclutamiento minimo 1 año</p>
+              <p><br /></p>
+              <p><strong>ACTIVIDADES</strong></p>
+              <p><br /></p>
+              <p>
+                Atracción de talento por diferentes fuentes de reclutamiento
+              </p>
+              <p>Atención al cliente</p>
+              <p>
+                Cumplir con la meta semanal y mensual (cobertura y disminución
+                de rotación)
+              </p>
+              <p>Armado de expediente</p>
+              <p>Manejo de excel para reportes</p>
+              <p><br /></p>
+              <p>
+                Zona a reclutar Las Aguilas, San Bartolo, Santa Rosa, Santa
+                Lucía, Centenario
+              </p>
+              <p><br /></p>
+              <p>No vivir a más de una hora de la zona a trabajar</p>
+              <p><br /></p>
+              <p>
+                Interesados enviar su cv con fotografía Lic. Laura Salazar,
+                indispensable contar con experiencia en reclutamiento
               </p>
             </div>
           </div>
-          <div class="topBorder-0-2-805">
-            <div
-              class="flex-0-2-4 jcenter-0-2-15 aend-0-2-20 navigation-0-2-809"
-              id="navigation"
-            >
-              <div id="next-job-button" class="navigationButton-0-2-812">
-                <button class="btn-0-2-123 ghostGrey-0-2-131">
-                  <span class="cont-0-2-124"
-                    ><p
-                      class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92 lessThanSm-0-2-813"
-                    >
-                      Ver siguiente vacante
-                    </p>
-                    <span class="greaterThanSm-0-2-814"
-                      >Ver siguiente vacante</span
-                    ></span
-                  ></button
-                ><button
-                  class="btn-0-2-123 ghostGrey-0-2-131 iconNextJob-0-2-811"
-                >
-                  <span class="cont-0-2-124"
-                    ><svg
-                      class="icon-0-2-74 atomic__arrow-right-o iconRight-0-2-139"
-                      width="14"
-                      height="14"
-                      fill="currentcolor"
-                      style="transition: none 0s ease 0s"
-                    >
-                      <use
-                        xlink:href="/jobs-assets/atomic-icons-1.5.1.svg#atomic__arrow-right-o"
-                      ></use></svg
-                  ></span>
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="fresnel-container fresnel-greaterThanOrEqual-sm"></div>
-      <div class="fresnel-container fresnel-at-sm">
-        <div class="content-0-2-749">
-          <div class="divider-0-2-707 bottomBase-0-2-718"></div>
-          <div class="flex-0-2-4 acenter-0-2-21">
-            <p
-              class="text-0-2-82 subheading-0-2-86 highEmphasis-0-2-103 bottomSmall-0-2-118"
-            >
-              Empleos similares
+        <div class="divider-0-2-707 topSmall-0-2-710 bottomSmall-0-2-717"></div>
+        <div class="flex-0-2-4 jend-0-2-14 wrapper-0-2-747">
+          <div class="flex-0-2-4 col-0-2-8 aend-0-2-20 text-0-2-748">
+            <button class="btn-0-2-123 ghostPink-0-2-130">
+              <span class="cont-0-2-124">Reportar vacante</span>
+            </button>
+            <p class="text-0-2-82 micro-0-2-91 highEmphasis-0-2-103">
+              ID: 16397185
             </p>
           </div>
-          <div class="carouselCont-0-2-759">
-            <div class="arrows-0-2-760">
-              <button
-                class="btn-0-2-123 ghostGrey-0-2-131 disabled-0-2-134 disabled-0-2-761 arrowRight-0-2-765 iconOnly-0-2-141"
-              >
-                <span class="cont-0-2-124"
-                  ><svg
-                    class="icon-0-2-74 atomic__arrow-left"
-                    width="14"
-                    height="14"
-                    fill="currentcolor"
-                    style="transition: none 0s ease 0s"
-                  >
-                    <use
-                      xlink:href="/jobs-assets/atomic-icons-1.5.1.svg#atomic__arrow-left"
-                    ></use></svg
-                ></span></button
-              ><button class="btn-0-2-123 ghostGrey-0-2-131 iconOnly-0-2-141">
-                <span class="cont-0-2-124"
-                  ><svg
-                    class="icon-0-2-74 atomic__arrow-right"
-                    width="14"
-                    height="14"
-                    fill="currentcolor"
-                    style="transition: none 0s ease 0s"
-                  >
-                    <use
-                      xlink:href="/jobs-assets/atomic-icons-1.5.1.svg#atomic__arrow-right"
-                    ></use></svg
-                ></span>
+        </div>
+        <div class="topBorder-0-2-805">
+          <div class="flex-0-2-4 jcenter-0-2-15 aend-0-2-20 navigation-0-2-809" id="navigation">
+            <div id="next-job-button" class="navigationButton-0-2-812">
+              <button class="btn-0-2-123 ghostGrey-0-2-131">
+                <span class="cont-0-2-124">
+                  <p class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92 lessThanSm-0-2-813">
+                    Ver siguiente vacante
+                  </p>
+                  <span class="greaterThanSm-0-2-814">Ver siguiente vacante</span>
+                </span></button><button class="btn-0-2-123 ghostGrey-0-2-131 iconNextJob-0-2-811">
+                <span class="cont-0-2-124"><svg class="icon-0-2-74 atomic__arrow-right-o iconRight-0-2-139" width="14"
+                    height="14" fill="currentcolor" style="transition: none 0s ease 0s">
+                    <use xlink:href="/jobs-assets/atomic-icons-1.5.1.svg#atomic__arrow-right-o"></use>
+                  </svg></span>
               </button>
             </div>
-            <div class="carouselWrap-0-2-762">
-              <div
-                class="flex-0-2-4 row-0-2-6 carousel-0-2-763"
-                style="width: 125%; margin-left: 0%"
-              >
-                <div class="item-0-2-764" style="flex: 1 1 0%">
-                  <div class="similarJob-0-2-766 firstSplitItem-0-2-767">
-                    <a
-                      href="https://www.occ.com.mx/empleo/oferta/16397194?sec=sim&amp;simval=0.0077745384"
-                      id="vacante_similar-16397194"
-                      target="_blank"
-                      title="Ejecutivo de atracción de talento"
-                      class="link-0-2-768"
-                      ><p
-                        class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 overflow-0-2-770"
-                      >
-                        Ejecutivo de atracción de talento
-                      </p></a
-                    >
-                    <p
-                      class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 bottomSmall-0-2-118"
-                      id="vacante_similar_salario-16397194"
-                    >
-                      $9,000 - $11,000 Mensual
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fresnel-container fresnel-greaterThanOrEqual-sm"></div>
+    <div class="fresnel-container fresnel-at-sm">
+      <div class="content-0-2-749">
+        <div class="divider-0-2-707 bottomBase-0-2-718"></div>
+        <div class="flex-0-2-4 acenter-0-2-21">
+          <p class="text-0-2-82 subheading-0-2-86 highEmphasis-0-2-103 bottomSmall-0-2-118">
+            Empleos similares
+          </p>
+        </div>
+        <div class="carouselCont-0-2-759">
+          <div class="arrows-0-2-760">
+            <button
+              class="btn-0-2-123 ghostGrey-0-2-131 disabled-0-2-134 disabled-0-2-761 arrowRight-0-2-765 iconOnly-0-2-141">
+              <span class="cont-0-2-124"><svg class="icon-0-2-74 atomic__arrow-left" width="14" height="14"
+                  fill="currentcolor" style="transition: none 0s ease 0s">
+                  <use xlink:href="/jobs-assets/atomic-icons-1.5.1.svg#atomic__arrow-left"></use>
+                </svg></span></button><button class="btn-0-2-123 ghostGrey-0-2-131 iconOnly-0-2-141">
+              <span class="cont-0-2-124"><svg class="icon-0-2-74 atomic__arrow-right" width="14" height="14"
+                  fill="currentcolor" style="transition: none 0s ease 0s">
+                  <use xlink:href="/jobs-assets/atomic-icons-1.5.1.svg#atomic__arrow-right"></use>
+                </svg></span>
+            </button>
+          </div>
+          <div class="carouselWrap-0-2-762">
+            <div class="flex-0-2-4 row-0-2-6 carousel-0-2-763" style="width: 125%; margin-left: 0%">
+              <div class="item-0-2-764" style="flex: 1 1 0%">
+                <div class="similarJob-0-2-766 firstSplitItem-0-2-767">
+                  <a href="https://www.occ.com.mx/empleo/oferta/16397194?sec=sim&amp;simval=0.0077745384"
+                    id="vacante_similar-16397194" target="_blank" title="Ejecutivo de atracción de talento"
+                    class="link-0-2-768">
+                    <p class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 overflow-0-2-770">
+                      Ejecutivo de atracción de talento
                     </p>
-                    <p
-                      class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 overflow-0-2-770"
-                    >
-                      Grupo Salinas
-                    </p>
-                    <p
-                      class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 bottomSmall-0-2-118"
-                    >
-                      Ciudad de México
-                    </p>
-                    <a
-                      href="https://www.occ.com.mx/empleo/oferta/16397194?sec=sim&amp;simval=0.0077745384"
-                      id="boton_vacante_similar-16397194"
-                      target="_blank"
-                      class="similarJobLink-0-2-769"
-                      ><button
-                        class="btn-0-2-123 tertiary-0-2-128 block-0-2-137"
-                      >
-                        <span class="cont-0-2-124">VER VACANTE</span>
-                      </button></a
-                    >
-                  </div>
+                  </a>
+                  <p class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 bottomSmall-0-2-118"
+                    id="vacante_similar_salario-16397194">
+                    $9,000 - $11,000 Mensual
+                  </p>
+                  <p class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 overflow-0-2-770">
+                    Grupo Salinas
+                  </p>
+                  <p class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 bottomSmall-0-2-118">
+                    Ciudad de México
+                  </p>
+                  <a href="https://www.occ.com.mx/empleo/oferta/16397194?sec=sim&amp;simval=0.0077745384"
+                    id="boton_vacante_similar-16397194" target="_blank" class="similarJobLink-0-2-769"><button
+                      class="btn-0-2-123 tertiary-0-2-128 block-0-2-137">
+                      <span class="cont-0-2-124">VER VACANTE</span>
+                    </button></a>
                 </div>
-                <div class="item-0-2-764" style="flex: 1 1 0%">
-                  <div class="similarJob-0-2-766">
-                    <a
-                      href="https://www.occ.com.mx/empleo/oferta/16397167?sec=sim&amp;simval=0.0058365758"
-                      id="vacante_similar-16397167"
-                      target="_blank"
-                      title="Analista de reclutamiento zona Alvaro Obregon"
-                      class="link-0-2-768"
-                      ><p
-                        class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 overflow-0-2-770"
-                      >
-                        Analista de reclutamiento zona Alvaro Obregon
-                      </p></a
-                    >
-                    <p
-                      class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 bottomSmall-0-2-118"
-                      id="vacante_similar_salario-16397167"
-                    >
-                      $9,000 - $11,000 Mensual
+              </div>
+              <div class="item-0-2-764" style="flex: 1 1 0%">
+                <div class="similarJob-0-2-766">
+                  <a href="https://www.occ.com.mx/empleo/oferta/16397167?sec=sim&amp;simval=0.0058365758"
+                    id="vacante_similar-16397167" target="_blank" title="Analista de reclutamiento zona Alvaro Obregon"
+                    class="link-0-2-768">
+                    <p class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 overflow-0-2-770">
+                      Analista de reclutamiento zona Alvaro Obregon
                     </p>
-                    <p
-                      class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 overflow-0-2-770"
-                    >
-                      Grupo Salinas
-                    </p>
-                    <p
-                      class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 bottomSmall-0-2-118"
-                    >
-                      Ciudad de México
-                    </p>
-                    <a
-                      href="https://www.occ.com.mx/empleo/oferta/16397167?sec=sim&amp;simval=0.0058365758"
-                      id="boton_vacante_similar-16397167"
-                      target="_blank"
-                      class="similarJobLink-0-2-769"
-                      ><button
-                        class="btn-0-2-123 tertiary-0-2-128 block-0-2-137"
-                      >
-                        <span class="cont-0-2-124">VER VACANTE</span>
-                      </button></a
-                    >
-                  </div>
+                  </a>
+                  <p class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 bottomSmall-0-2-118"
+                    id="vacante_similar_salario-16397167">
+                    $9,000 - $11,000 Mensual
+                  </p>
+                  <p class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 overflow-0-2-770">
+                    Grupo Salinas
+                  </p>
+                  <p class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 bottomSmall-0-2-118">
+                    Ciudad de México
+                  </p>
+                  <a href="https://www.occ.com.mx/empleo/oferta/16397167?sec=sim&amp;simval=0.0058365758"
+                    id="boton_vacante_similar-16397167" target="_blank" class="similarJobLink-0-2-769"><button
+                      class="btn-0-2-123 tertiary-0-2-128 block-0-2-137">
+                      <span class="cont-0-2-124">VER VACANTE</span>
+                    </button></a>
                 </div>
-                <div class="item-0-2-764" style="flex: 1 1 0%">
-                  <div class="similarJob-0-2-766">
-                    <a
-                      href="https://www.occ.com.mx/empleo/oferta/16391430?sec=sim&amp;simval=0.0046598325"
-                      id="vacante_similar-16391430"
-                      target="_blank"
-                      title="RECLUTADOR (A)"
-                      class="link-0-2-768"
-                      ><p
-                        class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 overflow-0-2-770"
-                      >
-                        RECLUTADOR (A)
-                      </p></a
-                    >
-                    <p
-                      class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 bottomSmall-0-2-118"
-                      id="vacante_similar_salario-16391430"
-                    >
-                      Salario no mostrado.
+              </div>
+              <div class="item-0-2-764" style="flex: 1 1 0%">
+                <div class="similarJob-0-2-766">
+                  <a href="https://www.occ.com.mx/empleo/oferta/16391430?sec=sim&amp;simval=0.0046598325"
+                    id="vacante_similar-16391430" target="_blank" title="RECLUTADOR (A)" class="link-0-2-768">
+                    <p class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 overflow-0-2-770">
+                      RECLUTADOR (A)
                     </p>
-                    <p
-                      class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 overflow-0-2-770"
-                    >
-                      Grupo Inmobiliario Alhel
-                    </p>
-                    <p
-                      class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 bottomSmall-0-2-118"
-                    >
-                      Ciudad de México
-                    </p>
-                    <a
-                      href="https://www.occ.com.mx/empleo/oferta/16391430?sec=sim&amp;simval=0.0046598325"
-                      id="boton_vacante_similar-16391430"
-                      target="_blank"
-                      class="similarJobLink-0-2-769"
-                      ><button
-                        class="btn-0-2-123 tertiary-0-2-128 block-0-2-137"
-                      >
-                        <span class="cont-0-2-124">VER VACANTE</span>
-                      </button></a
-                    >
-                  </div>
+                  </a>
+                  <p class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 bottomSmall-0-2-118"
+                    id="vacante_similar_salario-16391430">
+                    Salario no mostrado.
+                  </p>
+                  <p class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 overflow-0-2-770">
+                    Grupo Inmobiliario Alhel
+                  </p>
+                  <p class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 bottomSmall-0-2-118">
+                    Ciudad de México
+                  </p>
+                  <a href="https://www.occ.com.mx/empleo/oferta/16391430?sec=sim&amp;simval=0.0046598325"
+                    id="boton_vacante_similar-16391430" target="_blank" class="similarJobLink-0-2-769"><button
+                      class="btn-0-2-123 tertiary-0-2-128 block-0-2-137">
+                      <span class="cont-0-2-124">VER VACANTE</span>
+                    </button></a>
                 </div>
-                <div class="item-0-2-764" style="flex: 1 1 0%">
-                  <div class="similarJob-0-2-766">
-                    <a
-                      href="https://www.occ.com.mx/empleo/oferta/16397203?sec=sim&amp;simval=0.0038572806"
-                      id="vacante_similar-16397203"
-                      target="_blank"
-                      title="Reclutador Zona Mixcoac"
-                      class="link-0-2-768"
-                      ><p
-                        class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 overflow-0-2-770"
-                      >
-                        Reclutador Zona Mixcoac
-                      </p></a
-                    >
-                    <p
-                      class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 bottomSmall-0-2-118"
-                      id="vacante_similar_salario-16397203"
-                    >
-                      $9,000 - $11,000 Mensual
+              </div>
+              <div class="item-0-2-764" style="flex: 1 1 0%">
+                <div class="similarJob-0-2-766">
+                  <a href="https://www.occ.com.mx/empleo/oferta/16397203?sec=sim&amp;simval=0.0038572806"
+                    id="vacante_similar-16397203" target="_blank" title="Reclutador Zona Mixcoac" class="link-0-2-768">
+                    <p class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 overflow-0-2-770">
+                      Reclutador Zona Mixcoac
                     </p>
-                    <p
-                      class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 overflow-0-2-770"
-                    >
-                      Grupo Salinas
-                    </p>
-                    <p
-                      class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 bottomSmall-0-2-118"
-                    >
-                      Ciudad de México
-                    </p>
-                    <a
-                      href="https://www.occ.com.mx/empleo/oferta/16397203?sec=sim&amp;simval=0.0038572806"
-                      id="boton_vacante_similar-16397203"
-                      target="_blank"
-                      class="similarJobLink-0-2-769"
-                      ><button
-                        class="btn-0-2-123 tertiary-0-2-128 block-0-2-137"
-                      >
-                        <span class="cont-0-2-124">VER VACANTE</span>
-                      </button></a
-                    >
-                  </div>
+                  </a>
+                  <p class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 bottomSmall-0-2-118"
+                    id="vacante_similar_salario-16397203">
+                    $9,000 - $11,000 Mensual
+                  </p>
+                  <p class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 overflow-0-2-770">
+                    Grupo Salinas
+                  </p>
+                  <p class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 bottomSmall-0-2-118">
+                    Ciudad de México
+                  </p>
+                  <a href="https://www.occ.com.mx/empleo/oferta/16397203?sec=sim&amp;simval=0.0038572806"
+                    id="boton_vacante_similar-16397203" target="_blank" class="similarJobLink-0-2-769"><button
+                      class="btn-0-2-123 tertiary-0-2-128 block-0-2-137">
+                      <span class="cont-0-2-124">VER VACANTE</span>
+                    </button></a>
                 </div>
-                <div class="item-0-2-764" style="flex: 1 1 0%">
-                  <div class="similarJob-0-2-766">
-                    <a
-                      href="https://www.occ.com.mx/empleo/oferta/16371501?sec=sim&amp;simval=0.003805899"
-                      id="vacante_similar-16371501"
-                      target="_blank"
-                      title="ANALISTA DE RECLUTAMIENTO ZONA ALVARO OBREGON"
-                      class="link-0-2-768"
-                      ><p
-                        class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 overflow-0-2-770"
-                      >
-                        ANALISTA DE RECLUTAMIENTO ZONA ALVARO OBREGON
-                      </p></a
-                    >
-                    <p
-                      class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 bottomSmall-0-2-118"
-                      id="vacante_similar_salario-16371501"
-                    >
-                      $9,000 - $11,000 Mensual
+              </div>
+              <div class="item-0-2-764" style="flex: 1 1 0%">
+                <div class="similarJob-0-2-766">
+                  <a href="https://www.occ.com.mx/empleo/oferta/16371501?sec=sim&amp;simval=0.003805899"
+                    id="vacante_similar-16371501" target="_blank" title="ANALISTA DE RECLUTAMIENTO ZONA ALVARO OBREGON"
+                    class="link-0-2-768">
+                    <p class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 overflow-0-2-770">
+                      ANALISTA DE RECLUTAMIENTO ZONA ALVARO OBREGON
                     </p>
-                    <p
-                      class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 overflow-0-2-770"
-                    >
-                      Grupo Salinas
-                    </p>
-                    <p
-                      class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 bottomSmall-0-2-118"
-                    >
-                      Ciudad de México
-                    </p>
-                    <a
-                      href="https://www.occ.com.mx/empleo/oferta/16371501?sec=sim&amp;simval=0.003805899"
-                      id="boton_vacante_similar-16371501"
-                      target="_blank"
-                      class="similarJobLink-0-2-769"
-                      ><button
-                        class="btn-0-2-123 tertiary-0-2-128 block-0-2-137"
-                      >
-                        <span class="cont-0-2-124">VER VACANTE</span>
-                      </button></a
-                    >
-                  </div>
+                  </a>
+                  <p class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 bottomSmall-0-2-118"
+                    id="vacante_similar_salario-16371501">
+                    $9,000 - $11,000 Mensual
+                  </p>
+                  <p class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 overflow-0-2-770">
+                    Grupo Salinas
+                  </p>
+                  <p class="text-0-2-82 small-0-2-90 lowEmphasis-0-2-105 bottomSmall-0-2-118">
+                    Ciudad de México
+                  </p>
+                  <a href="https://www.occ.com.mx/empleo/oferta/16371501?sec=sim&amp;simval=0.003805899"
+                    id="boton_vacante_similar-16371501" target="_blank" class="similarJobLink-0-2-769"><button
+                      class="btn-0-2-123 tertiary-0-2-128 block-0-2-137">
+                      <span class="cont-0-2-124">VER VACANTE</span>
+                    </button></a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="fresnel-container fresnel-greaterThan-sm"></div>
     </div>
-  </body>
+    <div class="fresnel-container fresnel-greaterThan-sm"></div>
+  </div>
+</body>
+
 </html>
