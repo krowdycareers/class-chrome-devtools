@@ -1,11 +1,12 @@
 const button = document.getElementById("procesar");
 
-const countryList = ["PERU", "COLOMBIA"];
+const countryList = ["PERU", "COLOMBIA", "CHILE", "MEXICO"];
 
 function scrapingJobs() {
   const jobsList = [...document.querySelectorAll("[class*=item-]")];
   return jobsList;
 }
+
 function processJobs(jobsList) {
   const formattedJobs = jobsList.map((job) => {
     let jobCountry = "Sin especificar";
@@ -76,3 +77,140 @@ function groupJobs() {
 }
 
 button.addEventListener("click", groupJobs);
+
+/* 
+
+--------OUTPUT--------
+
+[
+  {
+      "country": "PERU",
+      "jobs": [
+          {
+              "salaryRange": "$9,000 - $11,000 Mensual",
+              "count": 3,
+              "ads": [
+                  "Ejecutivo de atracción de talento PERU",
+                  "Ejecutivo de atracción de talento PERU",
+                  "Analista de reclutamiento zona PERU"
+              ]
+          },
+          {
+              "salaryRange": "$4,000 - $6,000 Mensual",
+              "count": 1,
+              "ads": [
+                  "Ejecutivo de atracción de talento PERU"
+              ]
+          },
+          {
+              "salaryRange": "$12,000 - $14,000 Mensual",
+              "count": 1,
+              "ads": [
+                  "ANALISTA DE RECLUTAMIENTO ZONA PERU"
+              ]
+          },
+          {
+              "salaryRange": "Salario no mostrado.",
+              "count": 1,
+              "ads": [
+                  "RECLUTADOR (A) PERU"
+              ]
+          }
+      ]
+  },
+  {
+      "country": "COLOMBIA",
+      "jobs": [
+          {
+              "salaryRange": "$9,000 - $11,000 Mensual",
+              "count": 3,
+              "ads": [
+                  "Analista de reclutamiento zona COLOMBIA",
+                  "ANALISTA DE RECLUTAMIENTO ZONA COLOMBIA",
+                  "Ejecutivo de atracción de talento COLOMBIA"
+              ]
+          },
+          {
+              "salaryRange": "Salario no mostrado.",
+              "count": 2,
+              "ads": [
+                  "RECLUTADOR (A) COLOMBIA",
+                  "RECLUTADOR (A) COLOMBIA"
+              ]
+          }
+      ]
+  },
+  {
+      "country": "CHILE",
+      "jobs": [
+          {
+              "salaryRange": "Salario no mostrado.",
+              "count": 2,
+              "ads": [
+                  "RECLUTADOR (A) CHILE",
+                  "RECLUTADOR (A) CHILE"
+              ]
+          },
+          {
+              "salaryRange": "$12,000 - $13,000 Mensual",
+              "count": 1,
+              "ads": [
+                  "Reclutador Zona CHILE"
+              ]
+          },
+          {
+              "salaryRange": "$12,000 - $14,000 Mensual",
+              "count": 1,
+              "ads": [
+                  "ANALISTA DE RECLUTAMIENTO ZONA ALVARO CHILE"
+              ]
+          }
+      ]
+  },
+  {
+      "country": "Sin especificar",
+      "jobs": [
+          {
+              "salaryRange": "$9,000 - $11,000 Mensual",
+              "count": 7,
+              "ads": [
+                  "Reclutador Zona Mixcoac",
+                  "Reclutador Zona Mixcoac",
+                  "ANALISTA DE PLANILLA",
+                  "Ejecutivo de rrhh",
+                  "Analista de rotativo zona Alvaro Obregon",
+                  "Reclutador Zona Mixcoac",
+                  "ANALISTA DE RECLUTAMIENTO ZONA ALVARO OBREGON"
+              ]
+          }
+      ]
+  },
+  {
+      "country": "MEXICO",
+      "jobs": [
+          {
+              "salaryRange": "$2,000 - $3,000 Mensual",
+              "count": 1,
+              "ads": [
+                  "Analista de reclutamiento zona MEXICO"
+              ]
+          },
+          {
+              "salaryRange": "$1,000 - $2,000 Mensual",
+              "count": 1,
+              "ads": [
+                  "Reclutador Zona MEXICO"
+              ]
+          },
+          {
+              "salaryRange": "$9,000 - $11,000 Mensual",
+              "count": 1,
+              "ads": [
+                  "Analista de reclutamiento zona MEXICO"
+              ]
+          }
+      ]
+  }
+] 
+
+*/
