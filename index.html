@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            background-color: #fff
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: HK Grotesk
+        }
+
+        @font-face {
+            font-family: HK Grotesk;
+            src: url(https://cdn-h4.occ.com.mx/fonts/hkgrotesk-regular.woff2) format("woff2"), url(https://cdn-h4.occ.com.mx/fonts/hkgrotesk-regular.woff) format("woff");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+            font-variant-ligatures: no-common-ligatures;
+            unicode-range: U+00??, U+0131, U+0152-0153, U+02bb-02bc, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2122, U+2191, U+2193, U+2212, U+2215, U+feff, U+fffd
+        }
+
+        @font-face {
+            font-family: HK Grotesk;
+            src: url(https://cdn-h4.occ.com.mx/fonts/hkgrotesk-semibold.woff2) format("woff2"), url(https://cdn-h4.occ.com.mx/fonts/hkgrotesk-semibold.woff) format("woff");
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+            font-variant-ligatures: no-common-ligatures;
+            unicode-range: U+00??, U+0131, U+0152-0153, U+02bb-02bc, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2122, U+2191, U+2193, U+2212, U+2215, U+feff, U+fffd
+        }
+
+        .standout-0-2-555:before {
+            top: 0;
+            left: 0;
+            width: 4px;
+            bottom: 0;
+            content: "";
+            position: absolute;
+            background-color: #001d7c;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .card-0-2-554 {
+            padding: 24px 32px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .card-0-2-518 {
+            padding: 16px;
+            position: relative;
+            background: #ffffff;
+            transition: 0.3s box-shadow, 0.3s transform;
+            border-radius: 6px;
+        }
+
+        .flat-0-2-520 {
+            z-index: auto;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 29, 124, 0.05);
+        }
+
+        .jobcard-0-2-559 {
+            top: 0;
+            left: 0;
+            width: 100%;
+            cursor: pointer;
+            height: 100%;
+            z-index: 1;
+            position: absolute;
+        }
+
+        .gridContainer-0-2-571 {
+            padding: 0;
+        }
+
+        .conFluid-0-2-60:before,
+        .conFluid-0-2-60:after {
+            content: "";
+            display: table;
+        }
+
+        .conFluid-0-2-60:after {
+            clear: both;
+        }
+
+        .conFluid-0-2-60:before,
+        .conFluid-0-2-60:after {
+            content: "";
+            display: table;
+        }
+
+        .conFluid-0-2-60 {
+            box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .row-0-2-173 {
+            box-sizing: border-box;
+            margin-left: -12px;
+            margin-right: -12px;
+        }
+
+        .cardContent-0-2-558 {
+            margin: 0;
+            z-index: 1;
+            position: relative;
+            pointer-events: none;
+        }
+
+        .row-0-2-173:before,
+        .row-0-2-173:after {
+            content: "";
+            display: table;
+        }
+
+        .row-0-2-173:after {
+            clear: both;
+        }
+
+        .row-0-2-173:before,
+        .row-0-2-173:after {
+            content: "";
+            display: table;
+        }
+
+        .ribbonCol-0-2-577 {
+            margin-bottom: 8px;
+        }
+
+        .flex-0-2-4 {
+            display: flex;
+        }
+
+        .jbetween-0-2-16 {
+            justify-content: space-between;
+        }
+
+        .astart-0-2-19 {
+            align-items: flex-start;
+        }
+
+        .wrap-0-2-11 {
+            flex-wrap: wrap;
+        }
+
+        .visited-0-2-570 .date-0-2-568 {
+            color: #777777;
+        }
+
+        .date-0-2-568 {
+            margin-right: 8px;
+        }
+
+        .highEmphasis-0-2-103 {
+            color: #222222;
+        }
+
+        .small-0-2-90 {
+            font-size: 13px;
+            line-height: 16px;
+        }
+
+        .text-0-2-82 {
+            margin: 0;
+            font-style: normal;
+            font-family: 'HK Grotesk', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0;
+        }
+
+        .acenter-0-2-21 {
+            align-items: center;
+        }
+
+        .icon-0-2-74 {
+            border: 0;
+            display: inline-block;
+            outline: 0;
+            box-sizing: border-box;
+        }
+
+        .statusLabel-0-2-562 {
+            margin-left: 4px;
+        }
+
+        .midEmphasis-0-2-104 {
+            color: #777777;
+        }
+
+        .micro-0-2-91 {
+            font-size: 11px;
+            line-height: 16px;
+        }
+
+        .text-0-2-82 {
+            margin: 0;
+            font-style: normal;
+            font-family: 'HK Grotesk', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0;
+        }
+
+        svg:not(:root) {
+            overflow-clip-margin: content-box;
+            overflow: hidden;
+        }
+
+        .recommendedLabel-0-2-563 {
+            overflow: visible;
+        }
+
+        .primary-0-2-594 {
+            color: #ffffff;
+            background: #002b99;
+        }
+
+        .small-0-2-586 {
+            height: 16px;
+            padding: 1px 8px 3px 8px;
+        }
+
+        .tag-0-2-585 {
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 12px;
+            border-radius: 16px;
+        }
+
+        .noWrap-0-2-10 {
+            flex-wrap: nowrap;
+        }
+
+        .smallTagText-0-2-590 {
+            font-size: 11px;
+        }
+
+        .tagText-0-2-589 {
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            box-sizing: border-box;
+            font-style: normal;
+            text-align: center;
+            font-family: 'HK Grotesk', sans-serif;
+            font-weight: 600;
+            line-height: 1.4;
+            font-stretch: normal;
+            letter-spacing: normal;
+        }
+
+        @media screen and (min-width: 768px) {
+            .card-0-2-518 {
+                padding: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="jobcard-16631490" class="card-0-2-518 flat-0-2-520 card-0-2-554 standout-0-2-555"><a
+            class="jobcard-0-2-559" aria-label="Vacante Pintor automotriz profesional" id="1-premium"
+            href="https://www.occ.com.mx/empleo/oferta/16631490-pintor-automotriz-profesional/?ai=false&amp;ais=&amp;origin=unknown&amp;page=1&amp;rank=1&amp;returnURL=%2Fempleos%2F%231-premium&amp;sessionid=&amp;showseo=true&amp;type=3&amp;userid=&amp;utm_channel=premium&amp;utm_origin=web&amp;uuid=30cacb54-8280-4d85-a1cc-296834ae2d4c&amp;widgetCompany=false&amp;geolocation=false"></a>
+        <div class="conFluid-0-2-60 gridContainer-0-2-571">
+            <div class="row-0-2-173 cardContent-0-2-558 visited-0-2-570">
+                <div class="col-0-2-174 xs12-0-2-443 ribbonCol-0-2-577 formatCol-0-2-572">
+                    <div class="flex-0-2-4 jbetween-0-2-16 astart-0-2-19">
+                        <div class="flex-0-2-4 wrap-0-2-11 astart-0-2-19"><label
+                                class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 date-0-2-568">Hoy</label>
+                            <div class="flex-0-2-4 acenter-0-2-21">
+                                <svg class="icon-0-2-74 atomic__check" width="18" height="18" fill="#5736ab"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10zm-10.786 3.31 6.067-6.29-1.08-1.04-5.58 5.785-2.638-2.218-.966 1.148 3.175 2.669a.75.75 0 0 0 1.022-.054z" />
+                                </svg>
+
+
+                                <span class="text-0-2-82 micro-0-2-91 midEmphasis-0-2-104 statusLabel-0-2-562">Vista
+                                    recientemente.</span>
+                            </div>
+                        </div><label class="tag-0-2-585 small-0-2-586 primary-0-2-594 recommendedLabel-0-2-563">
+                            <div class="flex-0-2-4 noWrap-0-2-10 acenter-0-2-21"><span
+                                    class="tagText-0-2-589 smallTagText-0-2-590"
+                                    style="padding-right:0">Recomendada</span></div>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-0-2-174 xs12-0-2-443 formatCol-0-2-572">
+                    <div class="flex-0-2-4 wrap-0-2-11">
+                        <h2 class="text-0-2-82 subheading-0-2-86 highEmphasis-0-2-103 job-0-2-557 longWord-0-2-576">
+                            Pintor automotriz profesional</h2>
+                    </div>
+                </div>
+                <div class="col-0-2-174 xs12-0-2-443 formatCol-0-2-572 spaceBottom-0-2-564">
+                    <div class="flex-0-2-4 wrap-0-2-11 acenter-0-2-21"><span
+                            class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 salary-0-2-560">$18,000 - $20,000
+                            Mensual</span></div>
+                </div>
+                <div class="col-0-2-174 xs12-0-2-443 spaceBottom-0-2-564 formatCol-0-2-572">
+                    <ul class="ul-0-2-578">
+                        <li class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 li-0-2-579">Plan de carrera y
+                            crecimiento</li>
+                        <li class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 li-0-2-579">Estabilidad laboral</li>
+                        <li class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 li-0-2-579">Excelente ambiente de
+                            trabajo</li>
+                    </ul>
+                </div>
+                <div class="fresnel-container fresnel-at-sm ">
+                    <div class="col-0-2-174 xs12-0-2-443 spaceBottom-0-2-564 formatCol-0-2-572">
+                        <div class="flex-0-2-4 jbetween-0-2-16">
+                            <p
+                                class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 longWord-0-2-576 descriptionText-0-2-575">
+                                Acerca de la empresa somos un taller de esculturas especializados en arte pop imprimimos
+                                nuestro talento,dedicación y pasión en cada una de nuestras piez...</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-0-2-174 xs12-0-2-443 formatCol-0-2-572">
+                    <div class="flex-0-2-4 acenter-0-2-21">
+                        <div class="" style="flex:1">
+                            <div class="flex-0-2-4 jbetween-0-2-16 acenter-0-2-21">
+                                <div><label
+                                        class="text-0-2-82 standard-0-2-89 highEmphasis-0-2-103 strong-0-2-92 linkContainer-0-2-566"><a
+                                            class="locContainer-0-2-565 companyLink-0-2-567 noClickable-0-2-582"
+                                            title="Buscar empleos en PopSponsorMX"
+                                            href="https://www.occ.com.mx/empleos/bolsa-de-trabajo-PopSponsorMX/">
+                                            <div class="fresnel-container fresnel-lessThan-sm "></div>
+                                            <div class="fresnel-container fresnel-greaterThanOrEqual-sm ">PopSponsorMX
+                                            </div>
+                                        </a></label>
+                                    <p class="text-0-2-82 small-0-2-90 highEmphasis-0-2-103 zonesLinks-0-2-602"><a
+                                            title="Empleos en Atizapán de Zaragoza"
+                                            class="link-0-2-603 metalink-0-2-604 linkNoMarginRight-0-2-605"
+                                            href="https://www.occ.com.mx/empleos/en-estado-de-mexico/en-la-ciudad-de-atizapan-de-zaragoza/">Atizapán
+                                            de Zaragoza, </a><a title="Empleos en Estado de México"
+                                            class="link-0-2-603 metalink-0-2-604 linkNoMarginRight-0-2-605"
+                                            href="https://www.occ.com.mx/empleos/en-estado-de-mexico/">Edo. Méx.​</a>
+                                    </p>
+                                </div>
+                                <div class="logo-0-2-569">
+                                    <div class="link-0-2-608 image-0-2-609"><span
+                                            style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
+                                                style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
+                                                    style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
+                                                    alt="" aria-hidden="true"
+                                                    src="data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 version=%271.1%27 width=%2748%27 height=%2748%27/%3e"></span><img
+                                                alt="Bolsa de trabajo PopSponsorMX" fetchpriority="high"
+                                                srcset="https://www.occ.com.mx/jobs/_next/image/?url=https%3A%2F%2Fcdn-h4.occ.com.mx%2Fimages%2Flogos%2F300x300%2F9b%2F9bf8684f37f24a28a173671643551ec5.jpg&amp;w=48&amp;q=75 1x, https://www.occ.com.mx/jobs/_next/image/?url=https%3A%2F%2Fcdn-h4.occ.com.mx%2Fimages%2Flogos%2F300x300%2F9b%2F9bf8684f37f24a28a173671643551ec5.jpg&amp;w=96&amp;q=75 2x"
+                                                src="https://www.occ.com.mx/jobs/_next/image/?url=https%3A%2F%2Fcdn-h4.occ.com.mx%2Fimages%2Flogos%2F300x300%2F9b%2F9bf8684f37f24a28a173671643551ec5.jpg&amp;w=96&amp;q=75"
+                                                decoding="async" data-nimg="intrinsic"
+                                                class="logo-0-2-612 visited-0-2-611"
+                                                style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:contain"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fresnel-container fresnel-greaterThan-sm "></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fresnel-container fresnel-lessThan-sm "></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
