@@ -2312,6 +2312,8 @@
     </style>
   </head>
   <body>
+    <button id="Boton" onclick="agruparTrabajosPaises()">Boton que dispara la funcion</button>
+    <button onclick="agruparTrabajosSalarios()">Boton que dispara la funcion para los precios</button>
     <div class="card-0-2-518 flat-0-2-520 card-0-2-781 blueLine-0-2-783">
       <div class="jobHeaderDesktop-0-2-787">
         <div class="con-0-2-61 headerContainer-0-2-509">
@@ -4012,5 +4014,66 @@
       </div>
       <div class="fresnel-container fresnel-greaterThan-sm"></div>
     </div>
+    <script>
+      function agruparTrabajosPaises(){
+        let datos = Array.from(document.querySelectorAll('div[class*=similarJob]'));
+        const paises = {
+          peru: [],
+          chile: [],
+          colombia: [],
+          mexico: [],
+        }
+        datos = datos.filter(dato => {
+          
+          if (dato.children[0].children[0].innerText.includes("PERU")) {
+            paises.peru.push(dato);
+          } else if (dato.children[0].children[0].innerText.includes("CHILE")) {
+            paises.chile.push(dato);
+          } else if (dato.children[0].children[0].innerText.includes("COLOMBIA")) {
+            paises.colombia.push(dato);
+          } else {
+            paises.mexico.push(dato);
+          }
+        });
+
+    
+
+        console.log(paises);
+        
+      }
+
+      function agruparTrabajosSalarios(){
+        let datos = Array.from(document.querySelectorAll('div[class*=similarJob]'));
+        const salarios = {
+          doceMil: [],
+          nueveMil: [],
+          cuatroMil: [],
+          dosMil: [],
+          mil: [],
+          noMostrado: []
+        }
+        datos = datos.filter(dato => {
+          
+          if (dato.children[1].innerText.includes("$12,000 - $13,000")) {
+            salarios.doceMil.push(dato);
+          } else if (dato.children[1].innerText.includes("$9,000 - $11,000")) {
+            salarios.nueveMil.push(dato);
+          } else if (dato.children[1].innerText.includes("$4,000 - $6,000")) {
+            salarios.cuatroMil.push(dato);
+          } else if (dato.children[1].innerText.includes("$2,000 - $3,000")){
+            salarios.dosMil.push(dato);
+          }else if(dato.children[1].innerText.includes("$1,000 - $2,000")){
+            salarios.mil.push(dato);
+          }else{
+            salarios.noMostrado.push(dato);
+          }
+        });
+
+    
+
+        console.log(salarios);
+      }
+
+    </script>
   </body>
 </html>
