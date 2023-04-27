@@ -23,4 +23,5 @@ const similarsJobsData = (getDataOfInterest) =>
 function fetchingSimilarsJobsData() {
   const similarsJobs = document.querySelectorAll(".item-0-2-764");
   console.log("fetchingSimilarsJobsData -->>", similarsJobsData(getDataOfInterest(similarsJobs)));
+  console.log("fetchingSimilarsJobsData as JSON -->>", JSON.stringify(similarsJobsData(getDataOfInterest(similarsJobs))));
 }
