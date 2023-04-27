@@ -4012,5 +4012,30 @@
       </div>
       <div class="fresnel-container fresnel-greaterThan-sm"></div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const allItems = document.querySelectorAll('.item-0-2-764');
+            const arrayItems = [...allItems];
+            const mapItems = arrayItems.map(el => { 
+                let text = el.querySelector('a p').innerText; text = text.split(' ');
+                let salario = el.querySelector('[id*=vacante_similar_salario]').innerText;
+                salario = salario.trim().split(' ').filter(el => el.replace(/[^0-9]/g,"").length > 0).map(el => el.replace(/[^0-9]/g,""));
+                return {
+                    country: text[text.length-1], 
+                    salary: Math.max(...salario)
+                };
+            });            
+            const arraySort = mapItems.sort((a, b) => {            
+                let countryComparison = a.country.localeCompare(b.country);        
+                if (countryComparison === 0) {
+                    return a.salary - b.salary;
+                }
+            
+                return countryComparison;
+            });
+            console.log('El arreglo ordenado es: ', arraySort);
+
+        });        
+    </script>
   </body>
 </html>
