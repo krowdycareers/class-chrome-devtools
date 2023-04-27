@@ -59,6 +59,8 @@ buttonElement.addEventListener("click", () => {
 
   console.group("Trabajos por país");
   console.log(porPaises);
+  console.groupEnd();
+  console.group("Trabajos por Salarios");
   console.log(porSalarios);
   console.groupEnd();
 });
