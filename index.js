@@ -8,11 +8,9 @@ buttonElement.addEventListener("click", () => {
 
   // Convirtiendo datos a un array
   let datosArray = [...datos];
-
   let paises = ["PERU", "CHILE", "COLOMBIA", "MEXICO"];
 
   // Mostrando datos en un objeto
-
   let porPaises = paises.map((pais) => {
     let inToCountry = datosArray.filter((el) =>
       el.querySelector("a").innerText.includes(pais)
