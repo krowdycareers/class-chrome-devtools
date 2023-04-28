@@ -1,5 +1,5 @@
-// Obtenemos todos los elementos con la clase '.similarJob-0-2-766'
-const cards = Array.from(document.querySelectorAll('.similarJob-0-2-766'));
+// Obtenemos todos los elementos con la clase '.similarJob'
+const cards = Array.from(document.querySelectorAll('.similarJob'));
 
 // Función para obtener los trabajos por país y rango salarial
 const obtenerTrabajosPorPaisYRangoSalarial = (pais, minSalario, maxSalario) => {
